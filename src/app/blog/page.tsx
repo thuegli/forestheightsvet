@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -43,18 +42,9 @@ export default function BlogPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative bg-teal-darkest text-white">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/header-banner.png"
-            alt="Forest Heights Veterinary Clinic blog"
-            fill
-            className="object-cover opacity-20"
-            priority
-          />
-        </div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
-          <p className="text-teal-light font-semibold tracking-widest uppercase text-sm mb-4">
+      <section className="bg-forest-dark text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+          <p className="text-forest-light font-semibold tracking-widest uppercase text-sm mb-3">
             Pet Health & News
           </p>
           <h1 className="font-heading text-4xl md:text-5xl font-bold">Blog</h1>
@@ -71,14 +61,14 @@ export default function BlogPage() {
                 href={`/blog/${post.slug}`}
                 className="block bg-white rounded-lg p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
               >
-                <time className="text-sm text-teal font-semibold">
+                <time className="text-sm text-forest font-semibold">
                   {post.date}
                 </time>
                 <h2 className="font-heading text-xl md:text-2xl font-bold text-gray-900 mt-2 mb-3">
                   {post.title}
                 </h2>
                 <p className="text-gray-600">{post.excerpt}</p>
-                <span className="inline-block mt-4 text-teal font-semibold text-sm">
+                <span className="inline-block mt-4 text-forest font-semibold text-sm">
                   Read more &rarr;
                 </span>
               </Link>

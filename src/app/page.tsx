@@ -80,74 +80,79 @@ const services = [
 export default function Home() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="relative bg-teal-darkest text-white overflow-hidden">
-        <div className="absolute inset-0">
+      {/* Pet Photo Mosaic */}
+      <section className="grid grid-cols-2 md:grid-cols-4 gap-1">
+        <div className="relative aspect-square md:aspect-[4/3]">
           <Image
-            src="/images/header-banner.png"
-            alt="Forest Heights Veterinary Clinic"
+            src="/images/wellness-photo-1.jpg"
+            alt="Cat on scale at Forest Heights Veterinary Clinic"
             fill
-            className="object-cover opacity-20"
+            className="object-cover"
             priority
           />
         </div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-36">
-          <div className="max-w-3xl">
-            <p className="text-teal-light font-semibold tracking-widest uppercase text-sm mb-4">
-              Serving NW Portland Since 1994
-            </p>
-            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-              Exceptional Care for{" "}
-              <span className="text-teal-light">Dogs & Cats</span>
-            </h1>
-            <p className="mt-6 text-lg text-gray-300 max-w-xl">
-              Forest Heights Veterinary Clinic is a locally owned, full-service
-              veterinary hospital providing thorough, individualized, fear-free
-              medical care with kindness and compassion.
-            </p>
-            <div className="mt-8 flex flex-col sm:flex-row gap-4">
-              <a
-                href="tel:503-291-1757"
-                className="inline-flex items-center justify-center bg-teal text-white px-8 py-4 rounded font-semibold text-lg hover:bg-teal-dark transition-colors"
-              >
-                Book an Appointment
-              </a>
-              <Link
-                href="/services"
-                className="inline-flex items-center justify-center gap-2 bg-white/10 text-white px-8 py-4 rounded font-semibold text-lg hover:bg-white/20 transition-colors border border-white/20"
-              >
-                Our Services
-              </Link>
-            </div>
-          </div>
+        <div className="relative aspect-square md:aspect-[4/3]">
+          <Image
+            src="/images/wellness-photo-2.jpg"
+            alt="Veterinarian examining a dog with owner"
+            fill
+            className="object-cover"
+            priority
+          />
         </div>
+        <div className="relative aspect-square md:aspect-[4/3]">
+          <Image
+            src="/images/services-cat.jpg"
+            alt="Happy dog getting belly rubs at the vet"
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
+        <div className="relative aspect-square md:aspect-[4/3]">
+          <Image
+            src="/images/nutrition-photo.jpg"
+            alt="Chihuahua sitting on pet food bags"
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
+      </section>
+
+      {/* Tagline */}
+      <section className="py-4 bg-forest-dark text-center">
+        <p className="text-white text-sm md:text-base tracking-widest font-heading font-semibold uppercase">
+          Healing Pets in Portland Since 1994
+        </p>
       </section>
 
       {/* Intro / Differentiators */}
       <section className="py-16 md:py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+          <h1 className="font-heading text-3xl md:text-4xl font-bold text-gray-900 mb-6">
             Your Neighborhood Vet in NW Portland
-          </h2>
+          </h1>
           <p className="text-lg text-gray-600 leading-relaxed">
-            We strive to extend and enrich the lives of our patients by
-            providing thorough, individualized, fear-free medical care. Unlike
-            many clinics, we schedule 30-minute appointments so your pet gets
-            the time and attention they deserve.
+            Forest Heights Veterinary Clinic is a locally owned, full-service
+            veterinary hospital providing thorough, individualized, fear-free
+            medical care with kindness and compassion. Unlike many clinics, we
+            schedule 30-minute appointments so your pet gets the time and
+            attention they deserve.
           </p>
         </div>
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div>
-              <p className="text-4xl font-bold text-teal">30 min</p>
+              <p className="text-4xl font-bold text-forest">30 min</p>
               <p className="text-gray-600 mt-2">Appointment Times</p>
             </div>
             <div>
-              <p className="text-4xl font-bold text-teal">Since 1994</p>
+              <p className="text-4xl font-bold text-forest">Since 1994</p>
               <p className="text-gray-600 mt-2">Locally Owned</p>
             </div>
             <div>
-              <p className="text-4xl font-bold text-teal">Fear Free</p>
+              <p className="text-4xl font-bold text-forest">Fear Free</p>
               <p className="text-gray-600 mt-2">Certified Care</p>
             </div>
           </div>
@@ -174,8 +179,52 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Meet the Doctors Preview */}
+      <section className="py-16 md:py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Meet Our Veterinarians
+            </h2>
+            <p className="text-gray-600">
+              Experienced, compassionate doctors dedicated to your pet&apos;s health.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              { name: "Dr. Tracy Mento, DVM", role: "Owner & Veterinarian", image: "/images/staff-10.jpg" },
+              { name: "Dr. Tammy Tomschin, DVM", role: "Veterinarian", image: "/images/staff-dsc1361.jpg" },
+              { name: "Dr. Lyn Bedsaul, DVM, CCRP", role: "Veterinarian", image: "/images/staff-img1825.jpg" },
+            ].map((doc) => (
+              <Link key={doc.name} href="/staff" className="group text-center">
+                <div className="relative aspect-[3/4] rounded-lg overflow-hidden shadow-md mb-4">
+                  <Image
+                    src={doc.image}
+                    alt={doc.name}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <h3 className="font-heading text-lg font-bold text-gray-900">
+                  {doc.name}
+                </h3>
+                <p className="text-forest text-sm font-semibold">{doc.role}</p>
+              </Link>
+            ))}
+          </div>
+          <div className="text-center mt-8">
+            <Link
+              href="/staff"
+              className="inline-flex items-center gap-2 text-forest font-semibold hover:text-forest-dark transition-colors"
+            >
+              Meet the full team &rarr;
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
-      <section className="py-16 md:py-20 bg-teal text-white text-center">
+      <section className="py-16 md:py-20 bg-forest text-white text-center">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">
             New Patients Welcome
@@ -187,7 +236,7 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="tel:503-291-1757"
-              className="inline-flex items-center justify-center gap-2 bg-teal-darkest text-white px-8 py-4 rounded font-semibold text-lg hover:bg-teal-dark transition-colors"
+              className="inline-flex items-center justify-center gap-2 bg-forest-dark text-white px-8 py-4 rounded font-semibold text-lg hover:bg-forest-darkest transition-colors"
             >
               <svg
                 className="w-5 h-5"
@@ -206,7 +255,7 @@ export default function Home() {
             </a>
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center gap-2 bg-white text-teal-darkest px-8 py-4 rounded font-semibold text-lg hover:bg-gray-100 transition-colors"
+              className="inline-flex items-center justify-center gap-2 bg-white text-forest-dark px-8 py-4 rounded font-semibold text-lg hover:bg-gray-100 transition-colors"
             >
               Get Directions
             </Link>

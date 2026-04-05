@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Emergency Veterinary Care",
@@ -46,18 +45,9 @@ export default function EmergencyPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative bg-coral-darkest text-white">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/header-banner.png"
-            alt="Emergency veterinary care"
-            fill
-            className="object-cover opacity-15"
-            priority
-          />
-        </div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
-          <p className="text-coral-light font-semibold tracking-widest uppercase text-sm mb-4">
+      <section className="bg-coral-darkest text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+          <p className="text-coral-light font-semibold tracking-widest uppercase text-sm mb-3">
             Urgent Care
           </p>
           <h1 className="font-heading text-4xl md:text-5xl font-bold">
@@ -123,7 +113,7 @@ export default function EmergencyPage() {
                 <p className="text-sm text-gray-600 mb-3">{hospital.address}</p>
                 <a
                   href={`tel:${hospital.phone.replace(/[^\d]/g, "")}`}
-                  className="inline-flex items-center gap-2 text-teal font-semibold hover:text-teal-dark transition-colors"
+                  className="inline-flex items-center gap-2 text-forest font-semibold hover:text-forest-dark transition-colors"
                 >
                   <svg
                     className="w-4 h-4"

@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "End-of-Life & Euthanasia Services",
@@ -18,18 +17,9 @@ export default function EuthanasiaPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative bg-teal-darkest text-white">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/euthanasia-photo.jpg"
-            alt="Compassionate end-of-life care"
-            fill
-            className="object-cover opacity-15"
-            priority
-          />
-        </div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
-          <p className="text-teal-light font-semibold tracking-widest uppercase text-sm mb-4">
+      <section className="bg-forest-dark text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+          <p className="text-forest-light font-semibold tracking-widest uppercase text-sm mb-3">
             Compassionate Care
           </p>
           <h1 className="font-heading text-4xl md:text-5xl font-bold">
@@ -71,8 +61,8 @@ export default function EuthanasiaPage() {
               surrounded by the people and things they love. Some restrictions
               may apply based on scheduling and location.
             </p>
-            <div className="bg-teal-light/10 border border-teal-light/30 rounded-lg p-6 mt-6">
-              <h3 className="font-heading text-lg font-bold text-teal-dark mb-2">
+            <div className="bg-forest-lightest border border-forest-light/30 rounded-lg p-6 mt-6">
+              <h3 className="font-heading text-lg font-bold text-forest-dark mb-2">
                 Dedicated In-Home Euthanasia Service
               </h3>
               <p className="text-gray-600 text-sm leading-relaxed mb-4">
@@ -85,7 +75,7 @@ export default function EuthanasiaPage() {
                 href="https://housecalleuthanasia.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-teal font-semibold hover:text-teal-dark transition-colors"
+                className="inline-flex items-center gap-2 text-forest font-semibold hover:text-forest-dark transition-colors"
               >
                 Learn more at housecalleuthanasia.com
                 <svg
@@ -190,7 +180,7 @@ export default function EuthanasiaPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 md:py-20 bg-teal-darkest text-white text-center">
+      <section className="py-16 md:py-20 bg-forest-dark text-white text-center">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">
             We&apos;re Here for You
@@ -202,7 +192,7 @@ export default function EuthanasiaPage() {
           </p>
           <a
             href="tel:503-291-1757"
-            className="inline-flex items-center justify-center gap-2 bg-teal text-white px-8 py-4 rounded font-semibold text-lg hover:bg-teal-dark transition-colors"
+            className="inline-flex items-center justify-center gap-2 bg-forest text-white px-8 py-4 rounded font-semibold text-lg hover:bg-forest-dark transition-colors"
           >
             (503) 291-1757
           </a>

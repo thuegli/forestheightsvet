@@ -19,18 +19,9 @@ export default function NutritionPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative bg-teal-darkest text-white">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/nutrition-photo.jpg"
-            alt="Pet nutrition at Forest Heights Veterinary Clinic"
-            fill
-            className="object-cover opacity-20"
-            priority
-          />
-        </div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
-          <p className="text-teal-light font-semibold tracking-widest uppercase text-sm mb-4">
+      <section className="bg-forest-dark text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+          <p className="text-forest-light font-semibold tracking-widest uppercase text-sm mb-3">
             Diet & Wellness
           </p>
           <h1 className="font-heading text-4xl md:text-5xl font-bold">
@@ -76,6 +67,15 @@ export default function NutritionPage() {
         </div>
       </section>
 
+      {/* Photo */}
+      <section className="py-8 bg-white">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-md">
+            <Image src="/images/nutrition-photo.jpg" alt="Chihuahua sitting on prescription diet food bags" fill className="object-cover" />
+          </div>
+        </div>
+      </section>
+
       {/* Brands */}
       <section className="py-16 md:py-20 bg-gray-50">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -112,7 +112,7 @@ export default function NutritionPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 md:py-20 bg-teal text-white text-center">
+      <section className="py-16 md:py-20 bg-forest text-white text-center">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">
             Questions About Your Pet&apos;s Diet?
@@ -124,13 +124,13 @@ export default function NutritionPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="tel:503-291-1757"
-              className="inline-flex items-center justify-center gap-2 bg-teal-darkest text-white px-8 py-4 rounded font-semibold text-lg hover:bg-teal-dark transition-colors"
+              className="inline-flex items-center justify-center gap-2 bg-forest-dark text-white px-8 py-4 rounded font-semibold text-lg hover:bg-forest-darkest transition-colors"
             >
               (503) 291-1757
             </a>
             <Link
               href="/services"
-              className="inline-flex items-center justify-center bg-white text-teal-darkest px-8 py-4 rounded font-semibold text-lg hover:bg-gray-100 transition-colors"
+              className="inline-flex items-center justify-center bg-white text-forest-dark px-8 py-4 rounded font-semibold text-lg hover:bg-gray-100 transition-colors"
             >
               All Services
             </Link>

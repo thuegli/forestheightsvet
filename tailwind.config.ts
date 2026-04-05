@@ -11,25 +11,23 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        forest: {
+          lightest: "#e8f5e9",
+          light: "#66bb6a",
+          DEFAULT: "#2e7d32",
+          dark: "#1b5e20",
+          darkest: "#0d3311",
+        },
         teal: {
           light: "#b9e4f3",
-          medium: "#94d1e7",
           DEFAULT: "#28add1",
           dark: "#297692",
-          darkest: "#143b49",
         },
         coral: {
           light: "#ffd2cc",
-          medium: "#fca599",
           DEFAULT: "#f56a56",
           dark: "#ec4a34",
           darkest: "#ca2913",
-        },
-        brand: {
-          green: "#8cd624",
-          "green-dark": "#5d8f18",
-          blue: "#2f89f7",
-          "blue-dark": "#1f5ba5",
         },
       },
       fontFamily: {

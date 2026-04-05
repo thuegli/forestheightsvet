@@ -1,31 +1,33 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-teal-darkest text-gray-400">
+    <footer className="bg-forest-dark text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {/* Contact Info */}
           <div>
-            <h3 className="text-white font-heading text-lg font-semibold mb-4">
-              Forest Heights Veterinary Clinic
+            <h3 className="font-heading text-lg font-bold tracking-wide mb-4">
+              FOREST HEIGHTS VETERINARY CLINIC
             </h3>
-            <address className="not-italic text-sm space-y-2">
+            <address className="not-italic text-sm text-white/80 space-y-1">
               <p>7365 SW Barnes Rd, Ste. H</p>
               <p>Portland, OR 97225</p>
               <p className="mt-3">
+                Ph:{" "}
                 <a
                   href="tel:503-291-1757"
-                  className="text-teal-light hover:text-white transition-colors font-semibold"
+                  className="text-white hover:text-forest-light transition-colors font-semibold"
                 >
                   (503) 291-1757
                 </a>
               </p>
               <p>Fax: (503) 291-1773</p>
-              <p>
+              <p className="mt-2">
                 <a
                   href="mailto:forestheightsvet@gmail.com"
-                  className="hover:text-white transition-colors"
+                  className="hover:text-forest-light transition-colors"
                 >
                   forestheightsvet@gmail.com
                 </a>
@@ -33,109 +35,85 @@ export default function Footer() {
             </address>
           </div>
 
-          {/* Navigation */}
-          <div>
-            <h3 className="text-white text-lg font-semibold mb-4">
-              Navigation
-            </h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link href="/" className="hover:text-white transition-colors">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/about"
-                  className="hover:text-white transition-colors"
-                >
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/staff"
-                  className="hover:text-white transition-colors"
-                >
-                  Meet Our Staff
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services"
-                  className="hover:text-white transition-colors"
-                >
-                  Services
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/euthanasia"
-                  className="hover:text-white transition-colors"
-                >
-                  Euthanasia
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/emergency"
-                  className="hover:text-white transition-colors"
-                >
-                  Emergency
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/contact"
-                  className="hover:text-white transition-colors"
-                >
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          </div>
-
           {/* Hours */}
           <div>
-            <h3 className="text-white text-lg font-semibold mb-4">Hours</h3>
-            <dl className="text-sm space-y-1">
-              <div className="flex justify-between">
-                <dt>Monday</dt>
-                <dd>8:00 AM - 6:00 PM</dd>
-              </div>
-              <div className="flex justify-between">
-                <dt>Tuesday</dt>
-                <dd>8:00 AM - 6:00 PM</dd>
-              </div>
-              <div className="flex justify-between">
-                <dt>Wednesday</dt>
-                <dd>8:00 AM - 6:00 PM</dd>
-              </div>
-              <div className="flex justify-between">
-                <dt>Thursday</dt>
-                <dd>8:00 AM - 6:00 PM</dd>
-              </div>
-              <div className="flex justify-between">
-                <dt>Friday</dt>
-                <dd>8:00 AM - 6:00 PM</dd>
-              </div>
-              <div className="flex justify-between">
-                <dt>Saturday</dt>
-                <dd className="text-gray-500">Closed</dd>
-              </div>
-              <div className="flex justify-between">
-                <dt>Sunday</dt>
-                <dd className="text-gray-500">Closed</dd>
-              </div>
+            <h3 className="font-heading text-lg font-bold tracking-wide mb-4">
+              HOURS
+            </h3>
+            <dl className="text-sm text-white/80 space-y-1">
+              {[
+                { day: "Monday", hours: "8:00 AM – 6:00 PM" },
+                { day: "Tuesday", hours: "8:00 AM – 6:00 PM" },
+                { day: "Wednesday", hours: "8:00 AM – 6:00 PM" },
+                { day: "Thursday", hours: "8:00 AM – 6:00 PM" },
+                { day: "Friday", hours: "8:00 AM – 6:00 PM" },
+                { day: "Saturday", hours: "Closed" },
+                { day: "Sunday", hours: "Closed" },
+              ].map(({ day, hours }) => (
+                <div key={day} className="flex justify-between gap-4">
+                  <dt>{day}</dt>
+                  <dd
+                    className={
+                      hours === "Closed" ? "text-white/50" : "text-white"
+                    }
+                  >
+                    {hours}
+                  </dd>
+                </div>
+              ))}
             </dl>
+          </div>
+
+          {/* Map */}
+          <div>
+            <h3 className="font-heading text-lg font-bold tracking-wide mb-4">
+              FIND US
+            </h3>
+            <div className="rounded-lg overflow-hidden h-48">
+              <iframe
+                title="Forest Heights Veterinary Clinic location"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2794.7!2d-122.7762!3d45.5124!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54950a3c8b7e7b9d%3A0x4b8e3c0e9e9e9e9e!2s7365%20SW%20Barnes%20Rd%20Suite%20H%2C%20Portland%2C%20OR%2097225!5e0!3m2!1sen!2sus!4v1"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
           </div>
         </div>
 
-        <div className="border-t border-white/10 mt-10 pt-6 text-xs text-gray-500">
-          <p>
+        {/* Bottom bar */}
+        <div className="border-t border-white/20 mt-10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-6">
+            <Image
+              src="/images/footer-logo.png"
+              alt="American Association of Feline Practitioners"
+              width={120}
+              height={40}
+              className="h-8 w-auto brightness-0 invert"
+            />
+          </div>
+          <p className="text-xs text-white/50">
             &copy; {new Date().getFullYear()} Forest Heights Veterinary Clinic.
             All rights reserved.
           </p>
+          <div className="flex items-center gap-4">
+            {[
+              { href: "/about", label: "About" },
+              { href: "/services", label: "Services" },
+              { href: "/contact", label: "Contact" },
+            ].map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-xs text-white/60 hover:text-white transition-colors"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
     </footer>

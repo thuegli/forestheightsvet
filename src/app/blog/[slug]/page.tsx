@@ -133,15 +133,15 @@ export default function BlogPostPage({
   return (
     <>
       {/* Hero */}
-      <section className="bg-teal-darkest text-white">
+      <section className="bg-forest-dark text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
           <Link
             href="/blog"
-            className="text-teal-light hover:text-white transition-colors text-sm font-semibold mb-6 inline-flex items-center gap-1"
+            className="text-forest-light hover:text-white transition-colors text-sm font-semibold mb-6 inline-flex items-center gap-1"
           >
             &larr; Back to Blog
           </Link>
-          <time className="block text-teal-light text-sm mt-4">
+          <time className="block text-forest-light text-sm mt-4">
             {post.date}
           </time>
           <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mt-2">
@@ -154,7 +154,7 @@ export default function BlogPostPage({
       <section className="py-16 md:py-20 bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div
-            className="prose prose-lg max-w-none prose-headings:font-heading prose-headings:text-gray-900 prose-a:text-teal prose-a:no-underline hover:prose-a:underline"
+            className="prose prose-lg max-w-none prose-headings:font-heading prose-headings:text-gray-900 prose-a:text-forest prose-a:no-underline hover:prose-a:underline"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
         </div>
@@ -168,7 +168,7 @@ export default function BlogPostPage({
           </p>
           <a
             href="tel:503-291-1757"
-            className="inline-flex items-center justify-center gap-2 bg-teal text-white px-6 py-3 rounded font-semibold hover:bg-teal-dark transition-colors"
+            className="inline-flex items-center justify-center gap-2 bg-forest text-white px-6 py-3 rounded font-semibold hover:bg-forest-dark transition-colors"
           >
             Call (503) 291-1757
           </a>

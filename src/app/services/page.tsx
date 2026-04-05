@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import ServiceCard from "@/components/ServiceCard";
 
@@ -89,18 +88,9 @@ export default function ServicesPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative bg-teal-darkest text-white">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/services-cat.jpg"
-            alt="Cat receiving veterinary care"
-            fill
-            className="object-cover opacity-20"
-            priority
-          />
-        </div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
-          <p className="text-teal-light font-semibold tracking-widest uppercase text-sm mb-4">
+      <section className="bg-forest-dark text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+          <p className="text-forest-light font-semibold tracking-widest uppercase text-sm mb-3">
             Full-Service Veterinary Hospital
           </p>
           <h1 className="font-heading text-4xl md:text-5xl font-bold">
@@ -150,7 +140,7 @@ export default function ServicesPage() {
             </Link>
             <Link
               href="/euthanasia"
-              className="bg-teal-light/20 text-teal-dark px-6 py-3 rounded-lg font-semibold hover:bg-teal-light/30 transition-colors"
+              className="bg-forest-lightest text-forest-dark px-6 py-3 rounded-lg font-semibold hover:bg-forest-light/20 transition-colors"
             >
               End-of-Life Care
             </Link>
@@ -159,7 +149,7 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 md:py-20 bg-teal text-white text-center">
+      <section className="py-16 md:py-20 bg-forest text-white text-center">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">
             Questions About Our Services?
@@ -170,7 +160,7 @@ export default function ServicesPage() {
           </p>
           <a
             href="tel:503-291-1757"
-            className="inline-flex items-center justify-center gap-2 bg-teal-darkest text-white px-8 py-4 rounded font-semibold text-lg hover:bg-teal-dark transition-colors"
+            className="inline-flex items-center justify-center gap-2 bg-forest-dark text-white px-8 py-4 rounded font-semibold text-lg hover:bg-forest-darkest transition-colors"
           >
             (503) 291-1757
           </a>

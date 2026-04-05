@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -19,18 +18,9 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative bg-teal-darkest text-white">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/header-banner.png"
-            alt="Forest Heights Veterinary Clinic"
-            fill
-            className="object-cover opacity-20"
-            priority
-          />
-        </div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
-          <p className="text-teal-light font-semibold tracking-widest uppercase text-sm mb-4">
+      <section className="bg-forest-dark text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+          <p className="text-forest-light font-semibold tracking-widest uppercase text-sm mb-3">
             Serving NW Portland Since 1994
           </p>
           <h1 className="font-heading text-4xl md:text-5xl font-bold">
@@ -86,7 +76,7 @@ export default function AboutPage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-white rounded-lg p-8 text-center shadow-sm border border-gray-100">
-              <p className="text-4xl font-bold text-teal mb-3">30 min</p>
+              <p className="text-4xl font-bold text-forest mb-3">30 min</p>
               <h3 className="font-heading font-semibold text-gray-900 mb-2">
                 Longer Appointments
               </h3>
@@ -96,7 +86,7 @@ export default function AboutPage() {
               </p>
             </div>
             <div className="bg-white rounded-lg p-8 text-center shadow-sm border border-gray-100">
-              <p className="text-4xl font-bold text-teal mb-3">1994</p>
+              <p className="text-4xl font-bold text-forest mb-3">1994</p>
               <h3 className="font-heading font-semibold text-gray-900 mb-2">
                 Locally Owned
               </h3>
@@ -106,7 +96,7 @@ export default function AboutPage() {
               </p>
             </div>
             <div className="bg-white rounded-lg p-8 text-center shadow-sm border border-gray-100">
-              <p className="text-4xl font-bold text-teal mb-3">Fear Free</p>
+              <p className="text-4xl font-bold text-forest mb-3">Fear Free</p>
               <h3 className="font-heading font-semibold text-gray-900 mb-2">
                 Certified Care
               </h3>
@@ -145,7 +135,7 @@ export default function AboutPage() {
             ].map((area) => (
               <span
                 key={area}
-                className="bg-teal-light/20 text-teal-dark px-4 py-2 rounded-full text-sm font-medium"
+                className="bg-forest-lightest text-forest-dark px-4 py-2 rounded-full text-sm font-medium"
               >
                 {area}
               </span>
@@ -155,7 +145,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 md:py-20 bg-teal text-white text-center">
+      <section className="py-16 md:py-20 bg-forest text-white text-center">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">
             Come See the Difference
@@ -167,13 +157,13 @@ export default function AboutPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="tel:503-291-1757"
-              className="inline-flex items-center justify-center gap-2 bg-teal-darkest text-white px-8 py-4 rounded font-semibold text-lg hover:bg-teal-dark transition-colors"
+              className="inline-flex items-center justify-center gap-2 bg-forest-dark text-white px-8 py-4 rounded font-semibold text-lg hover:bg-forest-darkest transition-colors"
             >
               (503) 291-1757
             </a>
             <Link
               href="/staff"
-              className="inline-flex items-center justify-center bg-white text-teal-darkest px-8 py-4 rounded font-semibold text-lg hover:bg-gray-100 transition-colors"
+              className="inline-flex items-center justify-center bg-white text-forest-dark px-8 py-4 rounded font-semibold text-lg hover:bg-gray-100 transition-colors"
             >
               Meet Our Staff
             </Link>

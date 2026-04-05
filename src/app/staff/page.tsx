@@ -18,7 +18,7 @@ const doctors = [
   {
     name: "Dr. Tracy Mento, DVM",
     role: "Owner & Veterinarian",
-    image: "/images/staff-dsc1299.jpg",
+    image: "/images/staff-10.jpg",
     bio: "Dr. Mento has owned Forest Heights Veterinary Clinic since 2013. She attended University of California, San Diego, and received her BS in Biochemistry and Cell Biology, Cum Laude in 2000. In 2004, she graduated from University of California, Davis, with her DVM degree. She is a member of the Portland Veterinary Medical Association, the Oregon Veterinary Medical Association, the American Veterinary Medical Association, and the American Association of Feline Practitioners. Outside the hospital, she volunteers for the Pixie Project and Columbia Humane Society. Dr. Mento is a pet parent to Lucy, a 16 year old tuxedo DSH cat she adopted as an orphan kitten while in vet school, and Asha, a 1 year old grey kitty adopted from Forest Heights Veterinary Clinic. Her hobbies include travel, scuba diving, and backpacking.",
   },
   {
@@ -92,18 +92,9 @@ export default function StaffPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative bg-teal-darkest text-white">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/header-banner.png"
-            alt="Forest Heights Veterinary Clinic team"
-            fill
-            className="object-cover opacity-20"
-            priority
-          />
-        </div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
-          <p className="text-teal-light font-semibold tracking-widest uppercase text-sm mb-4">
+      <section className="bg-forest-dark text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+          <p className="text-forest-light font-semibold tracking-widest uppercase text-sm mb-3">
             Our Team
           </p>
           <h1 className="font-heading text-4xl md:text-5xl font-bold">
@@ -138,7 +129,7 @@ export default function StaffPage() {
                   <h3 className="font-heading text-2xl font-bold text-gray-900">
                     {doctor.name}
                   </h3>
-                  <p className="text-teal font-semibold mt-1">{doctor.role}</p>
+                  <p className="text-forest font-semibold mt-1">{doctor.role}</p>
                   <p className="text-gray-600 leading-relaxed mt-4">
                     {doctor.bio}
                   </p>
@@ -164,7 +155,7 @@ export default function StaffPage() {
                 <h3 className="font-heading text-lg font-bold text-gray-900">
                   {member.name}
                 </h3>
-                <p className="text-teal font-semibold text-sm mt-1">
+                <p className="text-forest font-semibold text-sm mt-1">
                   {member.role}
                 </p>
                 <p className="text-gray-600 text-sm leading-relaxed mt-3">
@@ -177,7 +168,7 @@ export default function StaffPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 md:py-20 bg-teal text-white text-center">
+      <section className="py-16 md:py-20 bg-forest text-white text-center">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">
             Ready to Meet Us?
@@ -188,7 +179,7 @@ export default function StaffPage() {
           </p>
           <a
             href="tel:503-291-1757"
-            className="inline-flex items-center justify-center gap-2 bg-teal-darkest text-white px-8 py-4 rounded font-semibold text-lg hover:bg-teal-dark transition-colors"
+            className="inline-flex items-center justify-center gap-2 bg-forest-dark text-white px-8 py-4 rounded font-semibold text-lg hover:bg-forest-darkest transition-colors"
           >
             (503) 291-1757
           </a>

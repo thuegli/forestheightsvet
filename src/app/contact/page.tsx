@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Contact Us",
@@ -18,18 +17,9 @@ export default function ContactPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative bg-teal-darkest text-white">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/contact-photo.jpg"
-            alt="Forest Heights Veterinary Clinic"
-            fill
-            className="object-cover opacity-20"
-            priority
-          />
-        </div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
-          <p className="text-teal-light font-semibold tracking-widest uppercase text-sm mb-4">
+      <section className="bg-forest-dark text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+          <p className="text-forest-light font-semibold tracking-widest uppercase text-sm mb-3">
             Get in Touch
           </p>
           <h1 className="font-heading text-4xl md:text-5xl font-bold">
@@ -50,9 +40,9 @@ export default function ContactPage() {
 
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
-                  <div className="bg-teal-light/20 rounded-full p-3 flex-shrink-0">
+                  <div className="bg-forest-lightest rounded-full p-3 flex-shrink-0">
                     <svg
-                      className="w-6 h-6 text-teal-dark"
+                      className="w-6 h-6 text-forest-dark"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -82,9 +72,9 @@ export default function ContactPage() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="bg-teal-light/20 rounded-full p-3 flex-shrink-0">
+                  <div className="bg-forest-lightest rounded-full p-3 flex-shrink-0">
                     <svg
-                      className="w-6 h-6 text-teal-dark"
+                      className="w-6 h-6 text-forest-dark"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -102,7 +92,7 @@ export default function ContactPage() {
                     <p>
                       <a
                         href="tel:503-291-1757"
-                        className="text-teal hover:text-teal-dark transition-colors font-semibold"
+                        className="text-forest hover:text-forest-dark transition-colors font-semibold"
                       >
                         (503) 291-1757
                       </a>
@@ -114,9 +104,9 @@ export default function ContactPage() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="bg-teal-light/20 rounded-full p-3 flex-shrink-0">
+                  <div className="bg-forest-lightest rounded-full p-3 flex-shrink-0">
                     <svg
-                      className="w-6 h-6 text-teal-dark"
+                      className="w-6 h-6 text-forest-dark"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -134,7 +124,7 @@ export default function ContactPage() {
                     <p>
                       <a
                         href="mailto:forestheightsvet@gmail.com"
-                        className="text-teal hover:text-teal-dark transition-colors"
+                        className="text-forest hover:text-forest-dark transition-colors"
                       >
                         forestheightsvet@gmail.com
                       </a>
@@ -174,8 +164,8 @@ export default function ContactPage() {
                 </dl>
               </div>
 
-              <div className="mt-8 p-4 bg-teal-light/10 rounded-lg border border-teal-light/30">
-                <p className="text-teal-dark font-semibold text-sm">
+              <div className="mt-8 p-4 bg-forest-lightest rounded-lg border border-forest-light/30">
+                <p className="text-forest-dark font-semibold text-sm">
                   New patients are always welcome! Call us to schedule your
                   pet&apos;s first appointment.
                 </p>
