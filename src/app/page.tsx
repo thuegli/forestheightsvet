@@ -134,11 +134,12 @@ export default function Home() {
             Your Neighborhood Vet in NW Portland
           </h1>
           <p className="text-lg text-gray-600 leading-relaxed">
-            Forest Heights Veterinary Clinic is a locally owned, full-service
-            veterinary hospital providing thorough, individualized, fear-free
-            medical care with kindness and compassion. Unlike many clinics, we
-            schedule 30-minute appointments so your pet gets the time and
-            attention they deserve.
+            As a trusted veterinarian in Portland, OR, Forest Heights
+            Veterinary Clinic is a locally owned, full-service veterinary
+            hospital providing thorough, individualized, fear-free medical care
+            with kindness and compassion. Unlike many clinics, our NW Portland
+            vet clinic schedules 30-minute appointments so your pet gets the
+            time and attention they deserve.
           </p>
         </div>
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">

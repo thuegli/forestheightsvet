@@ -36,9 +36,10 @@ export default function AboutPage() {
             <p className="text-lg text-gray-600 leading-relaxed">
               Forest Heights Veterinary Clinic is a full-service, small animal
               veterinary hospital providing comprehensive medical, surgical, and
-              dental care for dogs and cats. Located in the heart of NW Portland,
-              we&apos;ve proudly served the Forest Heights, West Slope, Sylvan,
-              and surrounding communities since 1994.
+              dental care for dogs and cats. As a trusted veterinarian in
+              Portland, OR, our vet clinic in NW Portland has proudly served the
+              Forest Heights, West Slope, Sylvan, and surrounding communities
+              since 1994.
             </p>
 
             <h2 className="font-heading text-2xl md:text-3xl font-bold text-gray-900 mt-12 mb-4">

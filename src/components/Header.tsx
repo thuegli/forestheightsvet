@@ -20,6 +20,7 @@ const navLinks = [
   { href: "/staff", label: "MEET OUR STAFF" },
   { href: "/services", label: "SERVICES", children: serviceLinks },
   { href: "/emergency", label: "EMERGENCY" },
+  { href: "/blog", label: "BLOG" },
   { href: "/contact", label: "CONTACT" },
 ];
 

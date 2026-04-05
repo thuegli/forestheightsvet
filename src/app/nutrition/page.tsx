@@ -35,12 +35,13 @@ export default function NutritionPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="prose prose-lg max-w-none">
             <p className="text-lg text-gray-600 leading-relaxed">
-              Nutrition plays an important role in your pet&apos;s overall
-              health, but with all the pet food choices on the market, it can be
-              hard to know which food — and how much — is right for your pet.
-              Many factors affect your pet&apos;s nutritional needs, including
-              age, breed, activity level, lifestyle, and medical conditions that
-              may develop over time.
+              Looking for pet nutrition counseling in Portland? Nutrition plays
+              an important role in your pet&apos;s overall health, but with all
+              the pet food choices on the market, it can be hard to know which
+              food — and how much — is right for your pet. Our veterinary diet
+              experts in Portland can help you navigate the many factors that
+              affect your pet&apos;s nutritional needs, including age, breed,
+              activity level, lifestyle, and medical conditions.
             </p>
 
             <h2 className="font-heading text-2xl md:text-3xl font-bold text-gray-900 mt-12 mb-4">
@@ -111,6 +112,41 @@ export default function NutritionPage() {
         </div>
       </section>
 
+      {/* Related Services */}
+      <section className="py-16 md:py-20 bg-neutral-50">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="font-heading text-2xl md:text-3xl font-bold text-gray-900 mb-8">
+            Related Services
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <Link
+              href="/wellness/"
+              className="group bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow"
+            >
+              <h3 className="font-heading text-xl font-bold text-gray-900 group-hover:text-forest transition-colors mb-2">
+                Wellness Exams
+              </h3>
+              <p className="text-gray-600 text-sm">
+                Comprehensive preventive care exams to keep your pet healthy at
+                every life stage.
+              </p>
+            </Link>
+            <Link
+              href="/pharmacy/"
+              className="group bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow"
+            >
+              <h3 className="font-heading text-xl font-bold text-gray-900 group-hover:text-forest transition-colors mb-2">
+                In-House Pharmacy
+              </h3>
+              <p className="text-gray-600 text-sm">
+                Convenient on-site pharmacy for prescriptions, refills, and
+                supplements.
+              </p>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-16 md:py-20 bg-forest text-white text-center">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -119,7 +155,9 @@ export default function NutritionPage() {
           </h2>
           <p className="text-white/80 text-lg mb-8">
             Our veterinarians can help you navigate nutrition choices for your
-            pet. Ask about diet at your next visit.
+            pet. Ask about diet at your next visit. Serving pet owners in
+            Forest Heights, West Slope, Beaverton, Bethany, and surrounding NW
+            Portland communities.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a

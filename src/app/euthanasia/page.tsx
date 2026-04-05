@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "End-of-Life & Euthanasia Services",
@@ -33,10 +34,12 @@ export default function EuthanasiaPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="prose prose-lg max-w-none">
             <p className="text-lg text-gray-600 leading-relaxed">
-              It is never easy to say goodbye to a beloved pet. When the time
-              comes, we want you to know that our team is here to support you
-              with compassion and care. We offer a variety of options to ensure
-              both you and your pet are as comfortable as possible during this
+              We provide compassionate pet euthanasia in Portland, including
+              in-home pet euthanasia for families who prefer the comfort of
+              their own home. When the time comes to say goodbye to a beloved
+              pet, we want you to know that our team is here to support you with
+              care and kindness. We offer a variety of options to ensure both
+              you and your pet are as comfortable as possible during this
               difficult transition.
             </p>
 
@@ -134,6 +137,18 @@ export default function EuthanasiaPage() {
         </div>
       </section>
 
+      {/* Photo break */}
+      <div className="max-w-7xl mx-auto">
+        <div className="relative h-64 md:h-80">
+          <Image
+            src="/images/euthanasia-photo.jpg"
+            alt="Peaceful golden light over a meadow"
+            fill
+            className="object-cover"
+          />
+        </div>
+      </div>
+
       {/* What to Expect */}
       <section className="py-16 md:py-20 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -188,7 +203,8 @@ export default function EuthanasiaPage() {
           <p className="text-gray-400 text-lg mb-8">
             If you have questions or would like to discuss end-of-life options
             for your pet, please call us. We&apos;re here to help during this
-            difficult time.
+            difficult time. Serving families in Forest Heights, West Slope,
+            Sylvan, Beaverton, and surrounding NW Portland communities.
           </p>
           <a
             href="tel:503-291-1757"

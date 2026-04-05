@@ -50,12 +50,13 @@ export default function SurgeryPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="prose prose-lg max-w-none">
             <p className="text-lg text-gray-600 leading-relaxed">
-              We understand that your pet&apos;s surgical procedure can be
-              stressful. We strive to make surgery day as stress- and fear-free
-              as possible by educating you about what will happen while your pet
-              is with us. Your pet&apos;s safety and well-being is our number one
-              priority, and we have stringent anesthetic protocols in place to
-              ensure the safest experience possible.
+              If your pet needs surgery in Portland, Oregon, our experienced
+              veterinary surgeons in NW Portland are here to help. We strive to
+              make surgery day as stress- and fear-free as possible by educating
+              you about what will happen while your pet is with us. Your
+              pet&apos;s safety and well-being is our number one priority, and
+              we have stringent anesthetic protocols in place to ensure the
+              safest experience possible.
             </p>
 
             <h2 className="font-heading text-2xl md:text-3xl font-bold text-gray-900 mt-12 mb-4">
@@ -132,6 +133,41 @@ export default function SurgeryPage() {
         </div>
       </section>
 
+      {/* Related Services */}
+      <section className="py-16 md:py-20 bg-neutral-50">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="font-heading text-2xl md:text-3xl font-bold text-gray-900 mb-8">
+            Related Services
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <Link
+              href="/diagnostics/"
+              className="group bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow"
+            >
+              <h3 className="font-heading text-xl font-bold text-gray-900 group-hover:text-forest transition-colors mb-2">
+                Diagnostic Services
+              </h3>
+              <p className="text-gray-600 text-sm">
+                In-house lab work, X-rays, and ultrasound for fast, accurate
+                diagnoses.
+              </p>
+            </Link>
+            <Link
+              href="/pharmacy/"
+              className="group bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow"
+            >
+              <h3 className="font-heading text-xl font-bold text-gray-900 group-hover:text-forest transition-colors mb-2">
+                In-House Pharmacy
+              </h3>
+              <p className="text-gray-600 text-sm">
+                Convenient on-site pharmacy for prescriptions, refills, and
+                supplements.
+              </p>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-16 md:py-20 bg-forest text-white text-center">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -140,7 +176,9 @@ export default function SurgeryPage() {
           </h2>
           <p className="text-white/80 text-lg mb-8">
             We&apos;re happy to discuss your pet&apos;s surgical needs and walk
-            you through the process. Call us to learn more.
+            you through the process. Call us to learn more. Serving pet owners
+            in Forest Heights, West Slope, Sylvan, Beaverton, and surrounding
+            NW Portland communities.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a

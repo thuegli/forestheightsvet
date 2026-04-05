@@ -34,12 +34,12 @@ export default function DiagnosticsPage() {
       <section className="py-16 md:py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-lg text-gray-600 leading-relaxed">
-            At Forest Heights Veterinary Clinic, we are proud to offer
-            state-of-the-art diagnostic equipment including digital radiography,
-            digital dental radiography, ultrasonography, and in-house lab
-            machines. When it comes to your pet&apos;s health, time is of the
-            essence — our in-house capabilities allow us to get results quickly
-            so treatment can begin sooner.
+            For veterinary diagnostics in Portland, Forest Heights Veterinary
+            Clinic offers state-of-the-art equipment including digital
+            radiography, digital dental radiography, ultrasonography, and
+            in-house lab machines. From pet X-rays to bloodwork, our NW
+            Portland clinic delivers fast, accurate results so treatment can
+            begin sooner.
           </p>
         </div>
       </section>
@@ -111,6 +111,41 @@ export default function DiagnosticsPage() {
         </div>
       </section>
 
+      {/* Related Services */}
+      <section className="py-16 md:py-20 bg-neutral-50">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="font-heading text-2xl md:text-3xl font-bold text-gray-900 mb-8">
+            Related Services
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <Link
+              href="/surgery/"
+              className="group bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow"
+            >
+              <h3 className="font-heading text-xl font-bold text-gray-900 group-hover:text-forest transition-colors mb-2">
+                Surgery &amp; Anesthesia
+              </h3>
+              <p className="text-gray-600 text-sm">
+                Safe surgical procedures with modern anesthesia monitoring and
+                attentive post-op care.
+              </p>
+            </Link>
+            <Link
+              href="/wellness/"
+              className="group bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow"
+            >
+              <h3 className="font-heading text-xl font-bold text-gray-900 group-hover:text-forest transition-colors mb-2">
+                Wellness Exams
+              </h3>
+              <p className="text-gray-600 text-sm">
+                Comprehensive preventive care exams to keep your pet healthy at
+                every life stage.
+              </p>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-16 md:py-20 bg-forest text-white text-center">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -119,7 +154,9 @@ export default function DiagnosticsPage() {
           </h2>
           <p className="text-white/80 text-lg mb-8">
             Our in-house diagnostics mean faster results and faster treatment for
-            your pet. Call us with any questions.
+            your pet. Call us with any questions. Serving pet owners in Forest
+            Heights, West Slope, Bethany, Cedar Mill, and surrounding NW
+            Portland communities.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a

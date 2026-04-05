@@ -28,6 +28,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     siteName: "Forest Heights Veterinary Clinic",
+    images: [{ url: "/images/storefront.jpg", width: 1200, height: 630 }],
   },
 };
 
@@ -42,7 +43,7 @@ const jsonLd = {
   faxNumber: "+1-503-291-1773",
   email: "forestheightsvet@gmail.com",
   foundingDate: "1994",
-  image: "https://www.forestheightsvet.com/images/site-logo.jpg",
+  image: "https://www.forestheightsvet.com/images/fhv-logo.png",
   address: {
     "@type": "PostalAddress",
     streetAddress: "7365 SW Barnes Rd, Ste. H",
@@ -78,7 +79,11 @@ const jsonLd = {
     "Beaverton",
   ],
   priceRange: "$$",
-  sameAs: [],
+  sameAs: [
+    "https://www.facebook.com/Forest-Heights-Veterinary-Clinic-104537922938443/",
+    "https://www.instagram.com/explore/locations/270229209/",
+    "https://www.yelp.com/biz/forest-heights-veterinary-clinic-portland",
+  ],
 };
 
 export default function RootLayout({

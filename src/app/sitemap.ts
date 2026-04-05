@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import posts from "./blog/posts";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://www.forestheightsvet.com";
@@ -20,12 +21,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/blog",
   ];
 
-  const blogSlugs = [
-    "coronavirus-action-plan",
-    "pet-first-aid-awareness-month",
-    "spring-parasites-and-pests",
-  ];
-
   const pages: MetadataRoute.Sitemap = staticPages.map((path) => ({
     url: `${baseUrl}${path}/`,
     lastModified: new Date(),
@@ -33,9 +28,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: path === "" ? 1 : path === "/services" ? 0.9 : 0.8,
   }));
 
-  const blogPages: MetadataRoute.Sitemap = blogSlugs.map((slug) => ({
-    url: `${baseUrl}/blog/${slug}/`,
-    lastModified: new Date(),
+  const blogPages: MetadataRoute.Sitemap = posts.map((post) => ({
+    url: `${baseUrl}/blog/${post.slug}/`,
+    lastModified: new Date(post.date),
     changeFrequency: "yearly",
     priority: 0.6,
   }));

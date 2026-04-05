@@ -35,12 +35,12 @@ export default function PharmacyPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="prose prose-lg max-w-none">
             <p className="text-lg text-gray-600 leading-relaxed">
-              We are proud to offer an on-site pharmacy that carries both
-              prescription and non-prescription veterinary medications. We carry a
-              wide variety of medications including those that treat common pet
-              ailments as well as long-term conditions such as heart disease,
-              liver or kidney disease, and arthritis. If your pet takes a
-              medication we don&apos;t carry, we can quickly place a special
+              Our veterinary pharmacy in Portland carries both prescription and
+              non-prescription pet medications for NW Portland families. We
+              stock a wide variety of medications including those that treat
+              common pet ailments as well as long-term conditions such as heart
+              disease, liver or kidney disease, and arthritis. If your pet takes
+              a medication we don&apos;t carry, we can quickly place a special
               order for you.
             </p>
 
@@ -94,6 +94,41 @@ export default function PharmacyPage() {
         </div>
       </section>
 
+      {/* Related Services */}
+      <section className="py-16 md:py-20 bg-neutral-50">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="font-heading text-2xl md:text-3xl font-bold text-gray-900 mb-8">
+            Related Services
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <Link
+              href="/nutrition/"
+              className="group bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow"
+            >
+              <h3 className="font-heading text-xl font-bold text-gray-900 group-hover:text-forest transition-colors mb-2">
+                Nutrition Counseling
+              </h3>
+              <p className="text-gray-600 text-sm">
+                Personalized diet plans and weight management guidance for every
+                life stage.
+              </p>
+            </Link>
+            <Link
+              href="/wellness/"
+              className="group bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow"
+            >
+              <h3 className="font-heading text-xl font-bold text-gray-900 group-hover:text-forest transition-colors mb-2">
+                Wellness Exams
+              </h3>
+              <p className="text-gray-600 text-sm">
+                Comprehensive preventive care exams to keep your pet healthy at
+                every life stage.
+              </p>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-16 md:py-20 bg-forest text-white text-center">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -102,7 +137,9 @@ export default function PharmacyPage() {
           </h2>
           <p className="text-white/80 text-lg mb-8">
             Call us to request a refill or ask about any of the medications and
-            supplements we carry.
+            supplements we carry. Serving pet owners in Forest Heights, West
+            Slope, Cedar Mill, Beaverton, and surrounding NW Portland
+            communities.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a

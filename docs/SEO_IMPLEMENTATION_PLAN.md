@@ -310,18 +310,18 @@ Consider creating a dedicated OG image (1200x630) with the clinic logo and tagli
 
 | Order | Phase | Estimated Scope | Impact |
 |-------|-------|----------------|--------|
-| 1 | 1.1 Image compression | Batch process ~25 images | High — page speed |
-| 2 | 1.2 Favicon | Generate 3 icon files | High — brand trust |
-| 3 | 1.3 Custom 404 | 1 new file | Medium — UX |
-| 4 | 2.1 Target keywords | Edit 12 pages | High — rankings |
-| 5 | 2.2 Geo neighborhoods | Edit 8 pages | Medium — local SEO |
-| 6 | 2.3 Expand emergency | Edit 1 page | Medium — content depth |
-| 7 | 2.4 Expand contact | Edit 1 page | Medium — content depth |
-| 8 | 3.1 Cross-links | Edit 6 pages | Medium — internal linking |
-| 9 | 3.2 Remove blog | Delete directory, update sitemap | Medium — remove stale content |
-| 10 | 3.3 Orphaned images | Delete/reassign ~8 files | Low — cleanup |
-| 11 | 4.1 JSON-LD sameAs | Edit 1 file | Medium — structured data |
-| 12 | 4.2 OG image | Edit 1 file | Low — social sharing |
+| 1 | ~~1.1 Image compression~~ | ~~Batch process ~25 images~~ | ~~High — page speed~~ DONE |
+| 2 | ~~1.2 Favicon~~ | ~~Generate 3 icon files~~ | ~~High — brand trust~~ DONE |
+| 3 | ~~1.3 Custom 404~~ | ~~1 new file~~ | ~~Medium — UX~~ DONE |
+| 4 | ~~2.1 Target keywords~~ | ~~Edit 12 pages~~ | ~~High — rankings~~ DONE |
+| 5 | ~~2.2 Geo neighborhoods~~ | ~~Edit 8 pages~~ | ~~Medium — local SEO~~ DONE |
+| 6 | ~~2.3 Expand emergency~~ | ~~Edit 1 page~~ | ~~Medium — content depth~~ DONE |
+| 7 | ~~2.4 Expand contact~~ | ~~Edit 1 page~~ | ~~Medium — content depth~~ DONE |
+| 8 | ~~3.1 Cross-links~~ | ~~Edit 6 pages~~ | ~~Medium — internal linking~~ DONE |
+| 9 | ~~3.2 Replace blog~~ | ~~Fresh blog with 5 SEO posts~~ | ~~Medium — fresh content~~ DONE |
+| 10 | ~~3.3 Orphaned images~~ | ~~Delete/reassign ~8 files~~ | ~~Low — cleanup~~ DONE |
+| 11 | ~~4.1 JSON-LD sameAs~~ | ~~Edit 1 file~~ | ~~Medium — structured data~~ DONE |
+| 12 | ~~4.2 OG image~~ | ~~Edit 1 file~~ | ~~Low — social sharing~~ DONE |
 | 13 | 4.3–4.5 Meta tweaks | Edit 3–4 files | Low — polish |
 | 14 | 5.1–5.2 Code cleanup | Edit 2 files | Low — maintenance |
 

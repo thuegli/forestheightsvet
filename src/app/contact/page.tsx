@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Contact Us",
@@ -34,9 +36,13 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Details */}
             <div>
-              <h2 className="font-heading text-2xl md:text-3xl font-bold text-gray-900 mb-8">
+              <h2 className="font-heading text-2xl md:text-3xl font-bold text-gray-900 mb-4">
                 Forest Heights Veterinary Clinic
               </h2>
+              <p className="text-gray-600 mb-8">
+                Your trusted veterinarian in NW Portland, conveniently located
+                at 7365 SW Barnes Rd in Portland, OR 97225.
+              </p>
 
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
@@ -186,6 +192,94 @@ export default function ContactPage() {
               />
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* How to Find Us */}
+      <section className="py-16 md:py-20 bg-neutral-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="font-heading text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                How to Find Us
+              </h2>
+              <p className="text-gray-600 mb-4">
+                Forest Heights Veterinary Clinic is located in the Barnes Road
+                shopping area at 7365 SW Barnes Rd, Suite H. We&apos;re in the
+                same complex as Forest Heights Pharmacy, just west of the
+                intersection of SW Barnes Rd and SW Leahy Rd. Look for our sign
+                near the parking lot entrance.
+              </p>
+              <p className="text-gray-600 mb-4">
+                <strong>From Highway 26 (Sunset Highway):</strong> Take the
+                Sylvan/Barnes Rd exit and head west on SW Barnes Rd. Continue
+                about 1.5 miles — the clinic will be on your right, past SW 72nd
+                Ave.
+              </p>
+              <p className="text-gray-600">
+                <strong>From Beaverton/Bethany:</strong> Head east on SW Barnes
+                Rd from Cedar Hills Blvd. The clinic is about 1 mile on your
+                left, just past the Forest Heights neighborhood entrance.
+              </p>
+            </div>
+            <div className="rounded-lg overflow-hidden shadow-md">
+              <Image
+                src="/images/contact-photo.jpg"
+                alt="Kitten at Forest Heights Veterinary Clinic"
+                width={800}
+                height={600}
+                className="w-full h-auto object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* New Patient */}
+      <section className="py-16 md:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="font-heading text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+              New Patient?
+            </h2>
+            <p className="text-gray-600 mb-6">
+              We&apos;d love to meet you and your pet! For your first visit,
+              please arrive 10&ndash;15 minutes early so we can get you checked
+              in. Bring any previous medical records, a list of current
+              medications, and let us know about any concerns or symptoms
+              you&apos;ve noticed. Our veterinary team will take the time to get
+              to know your pet and discuss a personalized care plan.
+            </p>
+            <p className="text-gray-600 mb-8">
+              We accept most major pet insurance plans and offer a range of{" "}
+              <Link
+                href="/wellness/"
+                className="text-forest hover:text-forest-dark transition-colors underline"
+              >
+                wellness and preventive care
+              </Link>{" "}
+              services to keep your pet healthy at every stage of life.
+            </p>
+            <a
+              href="tel:503-291-1757"
+              className="inline-flex items-center gap-2 bg-forest text-white font-semibold px-8 py-3 rounded-lg hover:bg-forest-dark transition-colors"
+            >
+              Call (503) 291-1757 to Schedule
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Neighborhoods */}
+      <section className="py-12 bg-forest-dark text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-forest-light font-semibold tracking-widest uppercase text-sm mb-3">
+            Proudly Serving NW Portland &amp; Surrounding Communities
+          </p>
+          <p className="text-lg text-gray-300">
+            Conveniently located for pet owners in Forest Heights, West Slope,
+            Sylvan, Bethany, Cedar Mill, Cedar Hills, and Beaverton.
+          </p>
         </div>
       </section>
     </>
