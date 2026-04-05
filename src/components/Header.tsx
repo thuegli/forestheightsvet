@@ -11,6 +11,7 @@ const serviceLinks = [
   { href: "/diagnostics", label: "Diagnostics" },
   { href: "/nutrition", label: "Nutrition" },
   { href: "/pharmacy", label: "Pharmacy" },
+  { href: "/euthanasia", label: "Euthanasia" },
 ];
 
 const navLinks = [
@@ -18,7 +19,6 @@ const navLinks = [
   { href: "/about", label: "ABOUT" },
   { href: "/staff", label: "MEET OUR STAFF" },
   { href: "/services", label: "SERVICES", children: serviceLinks },
-  { href: "/euthanasia", label: "EUTHANASIA" },
   { href: "/emergency", label: "EMERGENCY" },
   { href: "/contact", label: "CONTACT" },
 ];
