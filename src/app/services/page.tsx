@@ -120,7 +120,7 @@ export default function ServicesPage() {
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
           <div className="relative aspect-[3/2] rounded-lg overflow-hidden shadow-md">
             <Image
-              src="/images/services-cat.jpg"
+              src="/images/services-dog.jpg"
               alt="Happy dog getting belly rubs during a vet visit"
               fill
               className="object-cover object-bottom"

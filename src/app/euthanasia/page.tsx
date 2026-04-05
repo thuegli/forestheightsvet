@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "End-of-Life & Euthanasia Services",
+  title: "Euthanasia Services",
   description:
     "Compassionate pet euthanasia services in Portland, OR. In-clinic and in-home euthanasia options, cremation services, and aftercare at Forest Heights Veterinary Clinic.",
   alternates: { canonical: "/euthanasia/" },
   openGraph: {
-    title: "End-of-Life & Euthanasia Services | Forest Heights Veterinary Clinic",
+    title: "Euthanasia Services | Forest Heights Veterinary Clinic",
     description:
       "Compassionate pet euthanasia services in Portland, OR. In-clinic and in-home euthanasia options, cremation, and aftercare.",
     url: "/euthanasia/",

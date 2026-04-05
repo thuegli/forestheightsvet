@@ -4,6 +4,10 @@ import Link from "next/link";
 import ServiceCard from "@/components/ServiceCard";
 
 export const metadata: Metadata = {
+  title:
+    "Forest Heights Veterinary Clinic | NW Portland Vet | Dogs & Cats",
+  description:
+    "Locally owned, full-service dog and cat hospital in NW Portland providing exceptional veterinary care since 1994. 30-minute appointments, fear-free care.",
   alternates: { canonical: "/" },
   openGraph: {
     title:

@@ -322,8 +322,8 @@ Consider creating a dedicated OG image (1200x630) with the clinic logo and tagli
 | 10 | ~~3.3 Orphaned images~~ | ~~Delete/reassign ~8 files~~ | ~~Low — cleanup~~ DONE |
 | 11 | ~~4.1 JSON-LD sameAs~~ | ~~Edit 1 file~~ | ~~Medium — structured data~~ DONE |
 | 12 | ~~4.2 OG image~~ | ~~Edit 1 file~~ | ~~Low — social sharing~~ DONE |
-| 13 | 4.3–4.5 Meta tweaks | Edit 3–4 files | Low — polish |
-| 14 | 5.1–5.2 Code cleanup | Edit 2 files | Low — maintenance |
+| 13 | ~~4.3–4.5 Meta tweaks~~ | ~~Edit 2 files~~ | ~~Low — polish~~ DONE |
+| 14 | ~~5.1–5.2 Code cleanup~~ | ~~Rename file, update ref~~ | ~~Low — maintenance~~ DONE |
 
 ---
 
