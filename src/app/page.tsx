@@ -194,7 +194,7 @@ export default function Home() {
             {[
               { name: "Dr. Tracy Mento, DVM", role: "Owner & Veterinarian", image: "/images/staff-10.jpg" },
               { name: "Dr. Tammy Tomschin, DVM", role: "Veterinarian", image: "/images/staff-dsc1361.jpg" },
-              { name: "Dr. Lyn Bedsaul, DVM, CCRP", role: "Veterinarian", image: "/images/staff-img1825.jpg" },
+              { name: "Dr. Lyn Bedsaul, DVM, CCRP", role: "Veterinarian", image: "/images/staff-img1811.jpg" },
             ].map((doc) => (
               <Link key={doc.name} href="/staff" className="group text-center">
                 <div className="relative aspect-[3/4] rounded-lg overflow-hidden shadow-md mb-4">

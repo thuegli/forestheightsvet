@@ -30,7 +30,7 @@ const doctors = [
   {
     name: "Dr. Lyn Bedsaul, DVM, CCRP",
     role: "Veterinarian",
-    image: "/images/staff-img1825.jpg",
+    image: "/images/staff-img1811.jpg",
     bio: "Dr. Bedsaul attended the University of Tennessee for undergrad and veterinary school. She graduated in 2000 and received the Gentle Doctor Award. In 2013, she went back to UT to complete her CCRP (Certified Canine Rehabilitation Practitioner), which is similar to a physical therapist for dogs. She is a member of the Portland Veterinary Medical Association, the Oregon Veterinary Medical Association, and the American Veterinary Medical Association. The Bedsaul family loves outdoor adventures including biking, skiing, camping, and paddle boarding.",
   },
 ];
@@ -39,51 +39,61 @@ const team = [
   {
     name: "Marissa Paolacci",
     role: "Practice Manager",
+    image: "/images/staff-02.jpg",
     bio: "Marissa studied fine arts at the University of Washington. She started working with animals in Chicago as a full-time dog walker and veterinary technician before relocating to Portland in 2014.",
   },
   {
     name: "Hannah Hargens, CVT",
     role: "Lead Certified Vet Tech",
+    image: "/images/staff-img2040.jpg",
     bio: "Hannah has been working in veterinary medicine for 12 years and thrives in dental cleanings and procedures. She's been a certified veterinary technician at Forest Heights for five years.",
   },
   {
     name: "Candace Harpole, CVT",
     role: "Certified Vet Tech",
+    image: null,
     bio: "Candace has been a certified vet tech for 19 years, with experience in both large and small animals. Her special interests include cytology, emergency, and reproductive surgeries.",
   },
   {
     name: "Taylor Jason, CVT",
     role: "Certified Vet Tech",
+    image: "/images/staff-img1825.jpg",
     bio: "Taylor graduated from Washington State University with a bachelor's in biology and completed the PCC vet tech program in 2025. She has worked in vet med for 6 years.",
   },
   {
     name: "Tori Diekmeyer",
     role: "Vet Technician",
+    image: "/images/staff-dsc1297.jpg",
     bio: "Tori started working at Forest Heights in 2019 as a room technician. Known as 'Panda' for her love of food, cuddles, and extreme obsession with pandas.",
   },
   {
     name: "Kelsey Crow",
     role: "Vet Technician",
+    image: "/images/staff-dsc1423.jpg",
     bio: "Kelsey started with Forest Heights in 2022 and now assists the doctors as a room technician. She also runs her own pet and house sitting operation.",
   },
   {
     name: "Becca Best",
     role: "Client Services Lead",
+    image: "/images/staff-image000000.jpg",
     bio: "Becca joined Forest Heights in 2022, bringing over 30 years of healthcare experience. She has prior education in animal health and a passion for working with animals.",
   },
   {
     name: "Emily Gross",
     role: "Client Services",
+    image: null,
     bio: "Emily joined our team as a receptionist in fall of 2024, coming from Washington state with experience in farming and veterinary work.",
   },
   {
     name: "Angela Haas",
     role: "Tech Assistant",
+    image: "/images/staff-dsc1299.jpg",
     bio: "Angela joined the Forest Heights team after graduating high school. She's the younger sister to Tori, one of our technicians.",
   },
   {
     name: "Ashley Cruz",
     role: "Tech Assistant",
+    image: "/images/staff-2133685.jpg",
     bio: "Ashley joined the team in fall of 2024. She grew up on a farm and began her love for animals during her time in FFA and barrel racing.",
   },
 ];
@@ -150,17 +160,45 @@ export default function StaffPage() {
             {team.map((member) => (
               <div
                 key={member.name}
-                className="bg-white rounded-lg p-6 shadow-sm border border-gray-100"
+                className="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden flex flex-col sm:flex-row"
               >
-                <h3 className="font-heading text-lg font-bold text-gray-900">
-                  {member.name}
-                </h3>
-                <p className="text-forest font-semibold text-sm mt-1">
-                  {member.role}
-                </p>
-                <p className="text-gray-600 text-sm leading-relaxed mt-3">
-                  {member.bio}
-                </p>
+                {member.image ? (
+                  <div className="relative w-full sm:w-36 aspect-square sm:aspect-auto flex-shrink-0">
+                    <Image
+                      src={member.image}
+                      alt={member.name}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                ) : (
+                  <div className="w-full sm:w-36 aspect-square sm:aspect-auto flex-shrink-0 bg-forest-lightest flex items-center justify-center">
+                    <svg
+                      className="w-12 h-12 text-forest-light"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={1.5}
+                        d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
+                      />
+                    </svg>
+                  </div>
+                )}
+                <div className="p-5">
+                  <h3 className="font-heading text-lg font-bold text-gray-900">
+                    {member.name}
+                  </h3>
+                  <p className="text-forest font-semibold text-sm mt-1">
+                    {member.role}
+                  </p>
+                  <p className="text-gray-600 text-sm leading-relaxed mt-3">
+                    {member.bio}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
