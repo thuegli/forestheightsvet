@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import ServiceCard from "@/components/ServiceCard";
 
@@ -111,6 +112,20 @@ export default function ServicesPage() {
             effective way we can truly fulfill our mission of providing the
             highest quality medical care.
           </p>
+        </div>
+      </section>
+
+      {/* Photo */}
+      <section className="bg-white">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
+          <div className="relative aspect-[3/2] rounded-lg overflow-hidden shadow-md">
+            <Image
+              src="/images/services-cat.jpg"
+              alt="Happy dog getting belly rubs during a vet visit"
+              fill
+              className="object-cover object-bottom"
+            />
+          </div>
         </div>
       </section>
 

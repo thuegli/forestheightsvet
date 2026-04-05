@@ -100,12 +100,12 @@ export default function Home() {
             priority
           />
         </div>
-        <div className="relative aspect-square md:aspect-[4/3] bg-[#b5b09a]">
+        <div className="relative aspect-square md:aspect-[4/3]">
           <Image
-            src="/images/services-cat.jpg"
-            alt="Happy dog getting belly rubs at the vet"
+            src="/images/contact-photo.jpg"
+            alt="Kitten reaching out through kennel at the clinic"
             fill
-            className="object-contain"
+            className="object-cover"
             priority
           />
         </div>
