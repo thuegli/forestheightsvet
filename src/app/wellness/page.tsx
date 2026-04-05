@@ -178,7 +178,8 @@ export default function WellnessPage() {
           <p className="text-white/80 text-lg mb-8">
             Keep your pet healthy with regular check-ups. Call us to book a
             30-minute appointment. Serving pet owners in Forest Heights, West
-            Slope, Bethany, Beaverton, and surrounding NW Portland communities.
+            Slope, Bethany, Cedar Hills, Bonny Slope, and surrounding NW
+            Portland communities.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a

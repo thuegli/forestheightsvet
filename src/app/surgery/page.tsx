@@ -177,8 +177,8 @@ export default function SurgeryPage() {
           <p className="text-white/80 text-lg mb-8">
             We&apos;re happy to discuss your pet&apos;s surgical needs and walk
             you through the process. Call us to learn more. Serving pet owners
-            in Forest Heights, West Slope, Sylvan, Beaverton, and surrounding
-            NW Portland communities.
+            in Forest Heights, Sylvan, Kings Heights, Beaverton, and
+            surrounding NW Portland communities.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a

@@ -137,8 +137,8 @@ export default function PharmacyPage() {
           </h2>
           <p className="text-white/80 text-lg mb-8">
             Call us to request a refill or ask about any of the medications and
-            supplements we carry. Serving pet owners in Forest Heights, West
-            Slope, Cedar Mill, Beaverton, and surrounding NW Portland
+            supplements we carry. Serving pet owners in Forest Heights, Cedar
+            Mill, Willamette Heights, Oak Hills, and surrounding NW Portland
             communities.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

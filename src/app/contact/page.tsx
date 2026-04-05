@@ -5,7 +5,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Contact Us",
   description:
-    "Contact Forest Heights Veterinary Clinic in NW Portland. Call (503) 291-1757 or visit us at 7365 SW Barnes Rd, Suite H, Portland, OR 97225. Open Monday-Friday 8AM-6PM.",
+    "Contact Forest Heights Veterinary Clinic in NW Portland. Call (503) 291-1757. 7365 SW Barnes Rd, Portland, OR 97225. Serving Forest Heights, Cedar Mill, Bethany & Beaverton.",
   alternates: { canonical: "/contact/" },
   openGraph: {
     title: "Contact Us | Forest Heights Veterinary Clinic",
@@ -278,7 +278,8 @@ export default function ContactPage() {
           </p>
           <p className="text-lg text-gray-300">
             Conveniently located for pet owners in Forest Heights, West Slope,
-            Sylvan, Bethany, Cedar Mill, Cedar Hills, and Beaverton.
+            Sylvan, Cedar Mill, Cedar Hills, Bethany, Bonny Slope, Oak Hills,
+            and Beaverton. Serving zip codes 97225 and 97229.
           </p>
         </div>
       </section>

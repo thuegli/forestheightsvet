@@ -177,7 +177,7 @@ export default function DentistryPage() {
           <p className="text-white/80 text-lg mb-8">
             Bad breath, difficulty eating, or visible tartar are all signs your
             pet may need dental care. Call us to schedule an assessment.
-            Serving pet owners in Forest Heights, West Slope, Cedar Mill,
+            Serving pet owners in Forest Heights, Cedar Mill, Oak Hills,
             Bethany, and surrounding NW Portland communities.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

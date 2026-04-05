@@ -205,8 +205,8 @@ export default function EmergencyPage() {
             If your pet needs an after-hours vet in NW Portland, on weekends,
             or on holidays, please contact one of the following emergency
             veterinary hospitals. These facilities serve pet owners in Forest
-            Heights, West Slope, Bethany, Beaverton, and surrounding
-            communities.
+            Heights, West Slope, Cedar Hills, Bethany, Beaverton, and
+            surrounding communities.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {emergencyHospitals.map((hospital) => (

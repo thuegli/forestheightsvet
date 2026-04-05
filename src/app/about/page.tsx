@@ -130,9 +130,12 @@ export default function AboutPage() {
               "Green Hills",
               "Willamette Heights",
               "Kings Heights",
-              "Bethany",
-              "Beaverton",
               "Cedar Mill",
+              "Cedar Hills",
+              "Bethany",
+              "Bonny Slope",
+              "Oak Hills",
+              "Beaverton",
             ].map((area) => (
               <span
                 key={area}

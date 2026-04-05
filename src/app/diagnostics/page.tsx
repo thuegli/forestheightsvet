@@ -155,7 +155,7 @@ export default function DiagnosticsPage() {
           <p className="text-white/80 text-lg mb-8">
             Our in-house diagnostics mean faster results and faster treatment for
             your pet. Call us with any questions. Serving pet owners in Forest
-            Heights, West Slope, Bethany, Cedar Mill, and surrounding NW
+            Heights, West Slope, Green Hills, Cedar Hills, and surrounding NW
             Portland communities.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

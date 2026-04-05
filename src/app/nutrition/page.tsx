@@ -156,8 +156,8 @@ export default function NutritionPage() {
           <p className="text-white/80 text-lg mb-8">
             Our veterinarians can help you navigate nutrition choices for your
             pet. Ask about diet at your next visit. Serving pet owners in
-            Forest Heights, West Slope, Beaverton, Bethany, and surrounding NW
-            Portland communities.
+            Forest Heights, Bethany, Beaverton, Bonny Slope, and surrounding
+            NW Portland communities.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
