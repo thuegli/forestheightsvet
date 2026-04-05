@@ -87,7 +87,7 @@ export default function Home() {
             src="/images/wellness-photo-1.jpg"
             alt="Cat on scale at Forest Heights Veterinary Clinic"
             fill
-            className="object-cover"
+            className="object-cover object-top"
             priority
           />
         </div>
@@ -105,7 +105,7 @@ export default function Home() {
             src="/images/services-cat.jpg"
             alt="Happy dog getting belly rubs at the vet"
             fill
-            className="object-cover"
+            className="object-cover object-top"
             priority
           />
         </div>
