@@ -14,10 +14,18 @@ function contentsUrl(path: string) {
   return `https://api.github.com/repos/${GITHUB_REPO}/contents/${path}`;
 }
 
+function repoUrl(path: string) {
+  return `https://api.github.com/repos/${GITHUB_REPO}/${path}`;
+}
+
+// ─── File Operations ─────────────────────────────────────────────
+
 export async function getFile(
-  path: string
+  path: string,
+  branch?: string
 ): Promise<{ content: string; sha: string }> {
-  const res = await fetch(`${contentsUrl(path)}?ref=${GITHUB_BRANCH}`, {
+  const ref = branch || GITHUB_BRANCH;
+  const res = await fetch(`${contentsUrl(path)}?ref=${ref}`, {
     headers: headers(),
   });
 
@@ -34,12 +42,13 @@ export async function updateFile(
   path: string,
   content: string,
   message: string,
-  sha?: string
+  sha?: string,
+  branch?: string
 ): Promise<void> {
   const body: Record<string, string> = {
     message,
     content: Buffer.from(content).toString("base64"),
-    branch: GITHUB_BRANCH,
+    branch: branch || GITHUB_BRANCH,
   };
 
   if (sha) {
@@ -78,9 +87,11 @@ export async function deleteFile(
 }
 
 export async function listDirectory(
-  path: string
+  path: string,
+  branch?: string
 ): Promise<Array<{ name: string; path: string; sha: string }>> {
-  const res = await fetch(`${contentsUrl(path)}?ref=${GITHUB_BRANCH}`, {
+  const ref = branch || GITHUB_BRANCH;
+  const res = await fetch(`${contentsUrl(path)}?ref=${ref}`, {
     headers: headers(),
   });
 
@@ -118,5 +129,69 @@ export async function uploadImage(
 
   if (!res.ok) {
     throw new Error(`Failed to upload image ${path}: ${res.status} ${res.statusText}`);
+  }
+}
+
+// ─── Branch Operations ───────────────────────────────────────────
+
+export async function createBranch(branchName: string): Promise<void> {
+  // Get the SHA of the main branch
+  const res = await fetch(repoUrl(`git/ref/heads/${GITHUB_BRANCH}`), {
+    headers: headers(),
+  });
+
+  if (!res.ok) {
+    throw new Error(`Failed to get main branch SHA: ${res.status}`);
+  }
+
+  const data = await res.json();
+  const sha = data.object.sha;
+
+  // Create the new branch
+  const createRes = await fetch(repoUrl("git/refs"), {
+    method: "POST",
+    headers: headers(),
+    body: JSON.stringify({
+      ref: `refs/heads/${branchName}`,
+      sha,
+    }),
+  });
+
+  if (!createRes.ok) {
+    const err = await createRes.text();
+    // Branch might already exist — that's fine
+    if (!err.includes("Reference already exists")) {
+      throw new Error(`Failed to create branch ${branchName}: ${createRes.status} ${err}`);
+    }
+  }
+}
+
+export async function mergeBranch(branchName: string): Promise<void> {
+  const res = await fetch(repoUrl("merges"), {
+    method: "POST",
+    headers: headers(),
+    body: JSON.stringify({
+      base: GITHUB_BRANCH,
+      head: branchName,
+      commit_message: `Merge preview branch ${branchName}`,
+    }),
+  });
+
+  if (!res.ok) {
+    throw new Error(`Failed to merge branch ${branchName}: ${res.status} ${res.statusText}`);
+  }
+
+  // Clean up — delete the branch after merge
+  await deleteBranch(branchName);
+}
+
+export async function deleteBranch(branchName: string): Promise<void> {
+  const res = await fetch(repoUrl(`git/refs/heads/${branchName}`), {
+    method: "DELETE",
+    headers: headers(),
+  });
+
+  if (!res.ok && res.status !== 422) {
+    throw new Error(`Failed to delete branch ${branchName}: ${res.status}`);
   }
 }
