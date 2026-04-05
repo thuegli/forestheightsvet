@@ -102,8 +102,8 @@ export default function Home() {
         </div>
         <div className="relative aspect-square md:aspect-[4/3]">
           <Image
-            src="/images/contact-photo.jpg"
-            alt="Kitten reaching out through kennel at the clinic"
+            src="/images/storefront.png"
+            alt="Forest Heights Veterinary Clinic storefront"
             fill
             className="object-cover"
             priority
