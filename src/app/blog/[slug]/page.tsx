@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import posts from "../posts";
+import PhoneLink from "@/components/PhoneLink";
 
 export function generateStaticParams() {
   return posts.map((post) => ({ slug: post.slug }));
@@ -48,6 +49,40 @@ export default async function BlogPostPage({
     }
   );
 
+  const wordCount = post.content.split(/\s+/).filter(Boolean).length;
+  const readingTime = Math.max(1, Math.ceil(wordCount / 200));
+
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.description,
+    image: post.image
+      ? `https://www.forestheightsvet.com${post.image}`
+      : "https://www.forestheightsvet.com/images/storefront.jpg",
+    datePublished: post.date,
+    dateModified: post.dateModified ?? post.date,
+    author: {
+      "@type": "Person",
+      name: post.author,
+      url: post.authorSlug
+        ? `https://www.forestheightsvet.com/staff/#${post.authorSlug}`
+        : "https://www.forestheightsvet.com/staff/",
+    },
+    publisher: {
+      "@type": "VeterinaryCare",
+      name: "Forest Heights Veterinary Clinic",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://www.forestheightsvet.com/images/fhv-logo.png",
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `https://www.forestheightsvet.com/blog/${slug}/`,
+    },
+  };
+
   // Convert markdown-ish content to simple HTML
   const contentHtml = post.content
     .split("\n\n")
@@ -68,12 +103,16 @@ export default async function BlogPostPage({
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
       {/* Hero */}
       <section className="bg-forest-dark text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
           <div className="max-w-3xl">
             <Link
-              href="/blog"
+              href="/blog/"
               className="text-forest-light hover:text-white transition-colors text-sm font-semibold tracking-widest uppercase mb-3 inline-block"
             >
               &larr; Back to Blog
@@ -81,8 +120,26 @@ export default async function BlogPostPage({
             <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mt-2">
               {post.title}
             </h1>
-            <div className="flex items-center gap-3 mt-4 text-white/70 text-sm">
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-1 mt-4 text-white/70 text-sm">
+              <span>
+                By{" "}
+                {post.authorSlug ? (
+                  <Link
+                    href={`/staff/#${post.authorSlug}`}
+                    className="text-white hover:text-forest-light transition-colors font-semibold"
+                  >
+                    {post.author}
+                  </Link>
+                ) : (
+                  <span className="text-white font-semibold">
+                    {post.author}
+                  </span>
+                )}
+              </span>
+              <span>&middot;</span>
               <time dateTime={post.date}>{dateStr}</time>
+              <span>&middot;</span>
+              <span>{readingTime} min read</span>
               <span>&middot;</span>
               <span>{post.category}</span>
             </div>
@@ -111,14 +168,14 @@ export default async function BlogPostPage({
             pet&rsquo;s health. Call us or stop by the clinic.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="tel:503-291-1757"
+            <PhoneLink
+              location="blog_post_cta"
               className="inline-flex items-center justify-center gap-2 bg-forest-dark text-white px-8 py-4 rounded font-semibold text-lg hover:bg-forest-darkest transition-colors"
             >
               (503) 291-1757
-            </a>
+            </PhoneLink>
             <Link
-              href="/blog"
+              href="/blog/"
               className="inline-flex items-center justify-center bg-white text-forest-dark px-8 py-4 rounded font-semibold text-lg hover:bg-gray-100 transition-colors"
             >
               More Articles

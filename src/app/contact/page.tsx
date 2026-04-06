@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import PhoneLink from "@/components/PhoneLink";
+import FAQSection from "@/components/FAQSection";
 
 export const metadata: Metadata = {
   title: "Contact Us",
@@ -14,6 +16,21 @@ export const metadata: Metadata = {
     url: "/contact/",
   },
 };
+
+const faqItems = [
+  {
+    q: "Are you accepting new patients?",
+    a: "Yes — Forest Heights Veterinary Clinic is accepting new patients. We'd love to meet you and your pet. Call (503) 291-1757 to schedule a first appointment, and please arrive 10–15 minutes early so we can get you checked in.",
+  },
+  {
+    q: "What should I bring to my first appointment?",
+    a: "Please bring any previous medical records, a list of current medications and supplements, a sample of your pet's current food (or note the brand and type), and a list of any concerns or symptoms you've noticed. For cats, a secure carrier is essential. For dogs, a leash and collar. If your pet is anxious, a familiar blanket or toy can help.",
+  },
+  {
+    q: "Do you accept pet insurance?",
+    a: "We accept most major pet insurance plans. Insurance companies typically reimburse you directly after you pay at the time of visit, so we'll provide an itemized receipt that you can submit to your insurer. If you're shopping for insurance, we're happy to discuss what to look for in a plan.",
+  },
+];
 
 export default function ContactPage() {
   return (
@@ -96,12 +113,12 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-semibold text-gray-900">Phone</h3>
                     <p>
-                      <a
-                        href="tel:503-291-1757"
+                      <PhoneLink
+                        location="contact_phone"
                         className="text-forest hover:text-forest-dark transition-colors font-semibold"
                       >
                         (503) 291-1757
-                      </a>
+                      </PhoneLink>
                     </p>
                     <p className="text-gray-600 text-sm">
                       Fax: (503) 291-1773
@@ -260,15 +277,17 @@ export default function ContactPage() {
               </Link>{" "}
               services to keep your pet healthy at every stage of life.
             </p>
-            <a
-              href="tel:503-291-1757"
+            <PhoneLink
+              location="contact_new_patient"
               className="inline-flex items-center gap-2 bg-forest text-white font-semibold px-8 py-3 rounded-lg hover:bg-forest-dark transition-colors"
             >
               Call (503) 291-1757 to Schedule
-            </a>
+            </PhoneLink>
           </div>
         </div>
       </section>
+
+      <FAQSection items={faqItems} background="gray" />
 
       {/* Neighborhoods */}
       <section className="py-12 bg-forest-dark text-white">

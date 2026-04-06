@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import PhoneLink from "@/components/PhoneLink";
+import FAQSection from "@/components/FAQSection";
 
 export const metadata: Metadata = {
   title: "Emergency Veterinary Care",
@@ -42,6 +44,21 @@ const emergencyHospitals = [
   },
 ];
 
+const faqItems = [
+  {
+    q: "What are the signs of a pet emergency?",
+    a: "Signs of a true pet emergency include difficulty breathing, uncontrolled bleeding, seizures or sudden collapse, suspected ingestion of a toxin or foreign object, inability to urinate (especially in male cats), severe vomiting or diarrhea, distended or bloated abdomen, trauma such as being hit by a car, loss of consciousness, and sudden inability to stand or walk. If you see any of these, call us immediately during business hours or go directly to an after-hours emergency hospital.",
+  },
+  {
+    q: "What should I do before I arrive at the clinic?",
+    a: "Stay calm — your pet senses your stress. Call ahead so the team can prepare. Gently restrain your pet using a towel or blanket; for injured pets, minimize movement and support the body. Keep them warm and drive carefully. If you suspect poisoning, bring the packaging or product if you can do so safely.",
+  },
+  {
+    q: "Where do I take my pet for after-hours emergencies in NW Portland?",
+    a: "After hours, weekends, or holidays, contact one of the local 24-hour emergency hospitals: DoveLewis Emergency Animal Hospital (1945 NW Pettygrove St, Portland — (503) 228-7281), Tanasbourne Veterinary Emergency (Beaverton — (503) 629-5800), or the Emergency Veterinary Clinic of Tualatin ((503) 691-7922). These facilities serve pet owners in Forest Heights, West Slope, Cedar Hills, Bethany, Beaverton, and surrounding NW Portland communities.",
+  },
+];
+
 export default function EmergencyPage() {
   return (
     <>
@@ -69,8 +86,8 @@ export default function EmergencyPage() {
               emergency during our regular hours (Monday–Friday, 8:00 AM –
               6:00 PM), please call us immediately.
             </p>
-            <a
-              href="tel:503-291-1757"
+            <PhoneLink
+              location="emergency_cta"
               className="inline-flex items-center justify-center gap-2 bg-coral text-white px-8 py-4 rounded font-semibold text-lg hover:bg-coral-dark transition-colors"
             >
               <svg
@@ -87,7 +104,7 @@ export default function EmergencyPage() {
                 />
               </svg>
               (503) 291-1757
-            </a>
+            </PhoneLink>
           </div>
         </div>
       </section>
@@ -242,6 +259,8 @@ export default function EmergencyPage() {
           </div>
         </div>
       </section>
+
+      <FAQSection items={faqItems} />
     </>
   );
 }

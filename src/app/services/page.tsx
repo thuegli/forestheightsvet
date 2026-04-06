@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import ServiceCard from "@/components/ServiceCard";
+import PhoneLink from "@/components/PhoneLink";
 
 export const metadata: Metadata = {
   title: "Veterinary Services",
@@ -173,12 +174,12 @@ export default function ServicesPage() {
             We&apos;re happy to answer any questions about the care we provide.
             Call us or stop by our clinic.
           </p>
-          <a
-            href="tel:503-291-1757"
+          <PhoneLink
+            location="services_cta"
             className="inline-flex items-center justify-center gap-2 bg-forest-dark text-white px-8 py-4 rounded font-semibold text-lg hover:bg-forest-darkest transition-colors"
           >
             (503) 291-1757
-          </a>
+          </PhoneLink>
         </div>
       </section>
     </>

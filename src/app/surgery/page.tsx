@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import PhoneLink from "@/components/PhoneLink";
+import FAQSection from "@/components/FAQSection";
 
 export const metadata: Metadata = {
   title: "Surgery & Anesthesia",
@@ -30,9 +32,52 @@ const procedures = [
   "Hernia Repair",
 ];
 
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  serviceType: "Pet Surgery & Anesthesia",
+  name: "Pet Surgery & Anesthesia at Forest Heights Veterinary Clinic",
+  description:
+    "Safe pet surgery with modern anesthesia protocols, IV catheters, fluid support, and continuous monitoring. Spay, neuter, mass removal, and soft tissue surgery for dogs and cats in NW Portland.",
+  provider: {
+    "@type": "VeterinaryCare",
+    name: "Forest Heights Veterinary Clinic",
+    url: "https://www.forestheightsvet.com",
+  },
+  areaServed: {
+    "@type": "Place",
+    name: "NW Portland, OR",
+  },
+  audience: { "@type": "PeopleAudience", audienceType: "Pet Owners" },
+  url: "https://www.forestheightsvet.com/surgery/",
+};
+
+const faqItems = [
+  {
+    q: "Does Forest Heights require pre-operative bloodwork?",
+    a: "Yes. Pre-anesthetic blood testing is required for every surgical patient at Forest Heights, including young, apparently healthy pets. Bloodwork helps us identify hidden issues that could affect anesthesia safety, and it gives us a baseline to compare against if anything changes during recovery.",
+  },
+  {
+    q: "How long should my pet fast before surgery?",
+    a: "Withhold food for about 8–10 hours before the scheduled surgery time — typically nothing to eat after dinner the night before. Water access overnight is fine and encouraged, since we want your pet well hydrated. We'll give you specific instructions when scheduling.",
+  },
+  {
+    q: "What should I expect the day of surgery?",
+    a: "Plan to drop off in the morning so your pet has time to settle in before anesthesia. We'll review the procedure and consent forms with you, perform a pre-anesthetic exam, and call you with updates during the day. Most pets go home the same afternoon with detailed post-op instructions and any medications needed.",
+  },
+  {
+    q: "How long does it take to recover from a spay or neuter?",
+    a: "Most dogs and cats are back to normal energy levels within a few days, but the surgical site needs 10–14 days to fully heal. During recovery, we ask you to keep your pet calm — no running, jumping, swimming, or rough play — and to keep an e-collar on to prevent licking. We'll schedule a recheck or suture removal as needed.",
+  },
+];
+
 export default function SurgeryPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
       {/* Hero */}
       <section className="bg-forest-dark text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
@@ -168,6 +213,8 @@ export default function SurgeryPage() {
         </div>
       </section>
 
+      <FAQSection items={faqItems} />
+
       {/* CTA */}
       <section className="py-16 md:py-20 bg-forest text-white text-center">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -181,14 +228,14 @@ export default function SurgeryPage() {
             surrounding NW Portland communities.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="tel:503-291-1757"
+            <PhoneLink
+              location="surgery_cta"
               className="inline-flex items-center justify-center gap-2 bg-forest-dark text-white px-8 py-4 rounded font-semibold text-lg hover:bg-forest-darkest transition-colors"
             >
               (503) 291-1757
-            </a>
+            </PhoneLink>
             <Link
-              href="/services"
+              href="/services/"
               className="inline-flex items-center justify-center bg-white text-forest-dark px-8 py-4 rounded font-semibold text-lg hover:bg-gray-100 transition-colors"
             >
               All Services

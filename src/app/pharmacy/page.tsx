@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import PhoneLink from "@/components/PhoneLink";
+import FAQSection from "@/components/FAQSection";
 
 export const metadata: Metadata = {
   title: "In-House Pharmacy",
@@ -15,9 +17,48 @@ export const metadata: Metadata = {
   },
 };
 
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  serviceType: "Veterinary Pharmacy",
+  name: "In-House Veterinary Pharmacy at Forest Heights Veterinary Clinic",
+  description:
+    "Convenient on-site veterinary pharmacy in NW Portland. Prescription medications, flea and tick prevention, heartworm prevention, and supplements for dogs and cats.",
+  provider: {
+    "@type": "VeterinaryCare",
+    name: "Forest Heights Veterinary Clinic",
+    url: "https://www.forestheightsvet.com",
+  },
+  areaServed: {
+    "@type": "Place",
+    name: "NW Portland, OR",
+  },
+  audience: { "@type": "PeopleAudience", audienceType: "Pet Owners" },
+  url: "https://www.forestheightsvet.com/pharmacy/",
+};
+
+const faqItems = [
+  {
+    q: "Can you fill a prescription written by another veterinarian?",
+    a: "In most cases, yes — but the prescribing veterinarian must have an active client-patient relationship with your pet, and we'll need a copy of the prescription. Call us with the medication name and we'll let you know whether we stock it and what we need from the other clinic.",
+  },
+  {
+    q: "What flea and tick prevention do you recommend for the Portland area?",
+    a: "Portland's mild winters mean fleas can be active year-round, and ticks are common in Forest Park and the West Hills. We recommend year-round prevention using veterinarian-recommended products like NexGard, Bravecto, or Revolution. The right choice depends on your pet's species, weight, lifestyle, and any other medications.",
+  },
+  {
+    q: "Do you carry compounded medications?",
+    a: "We don't compound in-house, but we work closely with local compounding pharmacies including Northwest Compounders and Community Compounding Pharmacy when a pet needs a custom strength, flavor, or formulation. We can call in or fax compounded prescriptions for you.",
+  },
+];
+
 export default function PharmacyPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
       {/* Hero */}
       <section className="bg-forest-dark text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
@@ -129,6 +170,8 @@ export default function PharmacyPage() {
         </div>
       </section>
 
+      <FAQSection items={faqItems} />
+
       {/* CTA */}
       <section className="py-16 md:py-20 bg-forest text-white text-center">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -142,14 +185,14 @@ export default function PharmacyPage() {
             communities.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="tel:503-291-1757"
+            <PhoneLink
+              location="pharmacy_cta"
               className="inline-flex items-center justify-center gap-2 bg-forest-dark text-white px-8 py-4 rounded font-semibold text-lg hover:bg-forest-darkest transition-colors"
             >
               (503) 291-1757
-            </a>
+            </PhoneLink>
             <Link
-              href="/services"
+              href="/services/"
               className="inline-flex items-center justify-center bg-white text-forest-dark px-8 py-4 rounded font-semibold text-lg hover:bg-gray-100 transition-colors"
             >
               All Services

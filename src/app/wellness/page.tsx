@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import PhoneLink from "@/components/PhoneLink";
+import FAQSection from "@/components/FAQSection";
 
 export const metadata: Metadata = {
   title: "Wellness & Preventive Care",
@@ -15,9 +17,52 @@ export const metadata: Metadata = {
   },
 };
 
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  serviceType: "Pet Wellness Exams & Preventive Care",
+  name: "Wellness & Preventive Care at Forest Heights Veterinary Clinic",
+  description:
+    "Comprehensive wellness exams, vaccinations, parasite prevention, and preventive care for dogs and cats in NW Portland. 30-minute appointments and fear-free care.",
+  provider: {
+    "@type": "VeterinaryCare",
+    name: "Forest Heights Veterinary Clinic",
+    url: "https://www.forestheightsvet.com",
+  },
+  areaServed: {
+    "@type": "Place",
+    name: "NW Portland, OR",
+  },
+  audience: { "@type": "PeopleAudience", audienceType: "Pet Owners" },
+  url: "https://www.forestheightsvet.com/wellness/",
+};
+
+const faqItems = [
+  {
+    q: "How often should my dog or cat have a wellness exam?",
+    a: "We recommend a wellness exam at least once a year for healthy adult pets. Senior pets (dogs 7+ and cats 10+) and pets with chronic conditions benefit from twice-yearly exams. Puppies and kittens need a series of visits during their first few months for vaccinations and growth monitoring.",
+  },
+  {
+    q: "What vaccines does my pet need in Oregon?",
+    a: "Core vaccines for dogs include rabies, distemper, parvovirus, and adenovirus. Many Portland-area dogs also benefit from leptospirosis (carried by wildlife in our wet climate), Bordetella, and canine influenza. Core feline vaccines include rabies, FVRCP (feline herpesvirus, calicivirus, and panleukopenia), and FeLV for cats with outdoor access. We tailor each pet's vaccine plan to their lifestyle and risk.",
+  },
+  {
+    q: "Do you see senior pets, and how is a senior exam different?",
+    a: "Yes — we love caring for senior pets. Senior wellness visits include the standard physical exam plus baseline bloodwork, blood pressure checks, urinalysis, and a thorough discussion of mobility, cognition, and quality of life. Catching age-related changes early gives us more options to keep your pet comfortable.",
+  },
+  {
+    q: "What does a wellness exam at Forest Heights include?",
+    a: "Our 30-minute wellness exam includes a complete nose-to-tail physical, weight tracking, dental and oral health assessment, vaccine review, parasite prevention recommendations, nutritional counseling, and time for any questions. We never rush — wellness visits are an opportunity to build a complete picture of your pet's health.",
+  },
+];
+
 export default function WellnessPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
       {/* Hero */}
       <section className="bg-forest-dark text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
@@ -169,6 +214,8 @@ export default function WellnessPage() {
         </div>
       </section>
 
+      <FAQSection items={faqItems} />
+
       {/* CTA */}
       <section className="py-16 md:py-20 bg-forest text-white text-center">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -182,14 +229,14 @@ export default function WellnessPage() {
             Portland communities.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="tel:503-291-1757"
+            <PhoneLink
+              location="wellness_cta"
               className="inline-flex items-center justify-center gap-2 bg-forest-dark text-white px-8 py-4 rounded font-semibold text-lg hover:bg-forest-darkest transition-colors"
             >
               (503) 291-1757
-            </a>
+            </PhoneLink>
             <Link
-              href="/services"
+              href="/services/"
               className="inline-flex items-center justify-center bg-white text-forest-dark px-8 py-4 rounded font-semibold text-lg hover:bg-gray-100 transition-colors"
             >
               All Services

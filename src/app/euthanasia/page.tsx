@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import PhoneLink from "@/components/PhoneLink";
+import FAQSection from "@/components/FAQSection";
 
 export const metadata: Metadata = {
   title: "Euthanasia Services",
@@ -14,9 +16,52 @@ export const metadata: Metadata = {
   },
 };
 
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  serviceType: "Pet Euthanasia & End-of-Life Care",
+  name: "Compassionate Pet Euthanasia at Forest Heights Veterinary Clinic",
+  description:
+    "Compassionate in-clinic and in-home pet euthanasia in NW Portland. Private and communal cremation, aftercare, and grief support for families saying goodbye to their pets.",
+  provider: {
+    "@type": "VeterinaryCare",
+    name: "Forest Heights Veterinary Clinic",
+    url: "https://www.forestheightsvet.com",
+  },
+  areaServed: {
+    "@type": "Place",
+    name: "NW Portland, OR",
+  },
+  audience: { "@type": "PeopleAudience", audienceType: "Pet Owners" },
+  url: "https://www.forestheightsvet.com/euthanasia/",
+};
+
+const faqItems = [
+  {
+    q: "How will I know when it's time to say goodbye?",
+    a: "There's rarely a single clear moment. Veterinarians often use quality-of-life scales that look at appetite, mobility, hygiene, hydration, pain, happiness, and the ratio of good days to bad. If your pet no longer enjoys the things they used to love and good days are becoming rare, it may be time to talk with us. We're always available to help you weigh this decision without pressure.",
+  },
+  {
+    q: "Do you offer in-home euthanasia in Portland?",
+    a: "Yes — we offer at-home euthanasia for families who prefer the comfort and familiarity of home for this final goodbye, subject to scheduling and location. For families who want a dedicated in-home provider, we also recommend our companion service at housecalleuthanasia.com, which specializes in in-home end-of-life care.",
+  },
+  {
+    q: "What aftercare options are available?",
+    a: "We offer three aftercare options: private cremation (your pet is cremated individually and ashes are returned in your choice of urn or wood box with an engraved name plate), communal cremation (ashes are spread on private land in the Cascade Range), and home burial assistance.",
+  },
+  {
+    q: "What should I expect during the procedure?",
+    a: "Your pet will first receive a sedative to help them relax and feel completely comfortable. Once they are peacefully resting, a second medication is administered. The process is gentle and painless. You're welcome to be present throughout, step away at any point, or not be present at all — whatever feels right for you. Take all the time you need before and after.",
+  },
+];
+
 export default function EuthanasiaPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
       {/* Hero */}
       <section className="bg-forest-dark text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
@@ -194,6 +239,8 @@ export default function EuthanasiaPage() {
         </div>
       </section>
 
+      <FAQSection items={faqItems} background="gray" />
+
       {/* CTA */}
       <section className="py-16 md:py-20 bg-forest-dark text-white text-center">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -206,12 +253,12 @@ export default function EuthanasiaPage() {
             difficult time. Serving families in Forest Heights, West Slope,
             Sylvan, Beaverton, and surrounding NW Portland communities.
           </p>
-          <a
-            href="tel:503-291-1757"
+          <PhoneLink
+            location="euthanasia_cta"
             className="inline-flex items-center justify-center gap-2 bg-forest text-white px-8 py-4 rounded font-semibold text-lg hover:bg-forest-dark transition-colors"
           >
             (503) 291-1757
-          </a>
+          </PhoneLink>
         </div>
       </section>
     </>

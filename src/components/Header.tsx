@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import PhoneLink from "./PhoneLink";
 
 const serviceLinks = [
   { href: "/wellness", label: "Wellness" },
@@ -107,8 +108,8 @@ export default function Header() {
       {/* Mobile Nav Bar */}
       <div className="md:hidden border-t border-gray-200">
         <div className="flex items-center justify-between px-4 py-3">
-          <a
-            href="tel:503-291-1757"
+          <PhoneLink
+            location="header_mobile"
             className="inline-flex items-center gap-2 bg-forest text-white px-4 py-2 rounded text-sm font-semibold hover:bg-forest-dark transition-colors"
           >
             <svg
@@ -125,7 +126,7 @@ export default function Header() {
               />
             </svg>
             (503) 291-1757
-          </a>
+          </PhoneLink>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             className="p-2 text-gray-600"

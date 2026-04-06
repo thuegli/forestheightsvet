@@ -1,4 +1,5 @@
 import Link from "next/link";
+import PhoneLink from "@/components/PhoneLink";
 
 export default function NotFound() {
   return (
@@ -89,8 +90,8 @@ export default function NotFound() {
             </Link>
           </div>
 
-          <a
-            href="tel:503-291-1757"
+          <PhoneLink
+            location="not_found"
             className="inline-flex items-center justify-center gap-2 bg-forest text-white px-8 py-4 rounded font-semibold text-lg hover:bg-forest-dark transition-colors"
           >
             <svg
@@ -107,7 +108,7 @@ export default function NotFound() {
               />
             </svg>
             Call (503) 291-1757
-          </a>
+          </PhoneLink>
         </div>
       </section>
     </>

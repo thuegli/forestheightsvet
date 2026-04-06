@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import PhoneLink from "@/components/PhoneLink";
 
 export const metadata: Metadata = {
   title: "About Our Clinic",
@@ -159,14 +160,14 @@ export default function AboutPage() {
             pet&apos;s first visit.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="tel:503-291-1757"
+            <PhoneLink
+              location="about_cta"
               className="inline-flex items-center justify-center gap-2 bg-forest-dark text-white px-8 py-4 rounded font-semibold text-lg hover:bg-forest-darkest transition-colors"
             >
               (503) 291-1757
-            </a>
+            </PhoneLink>
             <Link
-              href="/staff"
+              href="/staff/"
               className="inline-flex items-center justify-center bg-white text-forest-dark px-8 py-4 rounded font-semibold text-lg hover:bg-gray-100 transition-colors"
             >
               Meet Our Staff

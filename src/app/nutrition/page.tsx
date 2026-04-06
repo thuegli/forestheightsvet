@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import PhoneLink from "@/components/PhoneLink";
+import FAQSection from "@/components/FAQSection";
 
 export const metadata: Metadata = {
   title: "Nutrition Counseling",
@@ -15,9 +17,48 @@ export const metadata: Metadata = {
   },
 };
 
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  serviceType: "Pet Nutrition Counseling",
+  name: "Pet Nutrition Counseling at Forest Heights Veterinary Clinic",
+  description:
+    "Personalized pet nutrition counseling, weight management, and prescription therapeutic diets for dogs and cats in NW Portland.",
+  provider: {
+    "@type": "VeterinaryCare",
+    name: "Forest Heights Veterinary Clinic",
+    url: "https://www.forestheightsvet.com",
+  },
+  areaServed: {
+    "@type": "Place",
+    name: "NW Portland, OR",
+  },
+  audience: { "@type": "PeopleAudience", audienceType: "Pet Owners" },
+  url: "https://www.forestheightsvet.com/nutrition/",
+};
+
+const faqItems = [
+  {
+    q: "Do I need a prescription from Forest Heights to buy Royal Canin or Hill's prescription diet?",
+    a: "Yes — therapeutic diets from Royal Canin Veterinary Diet, Hill's Prescription Diet, and Purina Pro Plan Veterinary Diets require a veterinary authorization. If your pet is already a Forest Heights patient and on a therapeutic diet, we can provide the authorization needed to purchase from us, online, or at a partner pharmacy.",
+  },
+  {
+    q: "How do I transition my pet to a new food?",
+    a: "Switch slowly over 7–10 days to avoid stomach upset. Start with about 25% new food mixed with 75% old food for the first 2–3 days, then 50/50 for 2–3 days, then 75% new food, then fully transition. If your pet has gastrointestinal issues during the transition, slow it down further or call us for advice.",
+  },
+  {
+    q: "What prescription diets do you carry?",
+    a: "We carry a full range of veterinary therapeutic diets including renal/kidney support, urinary, gastrointestinal, hydrolyzed (for food allergies), weight management, joint/mobility, dental, dermatologic, and life-stage formulas for puppies, kittens, adults, and seniors. If we don't stock the exact diet your pet needs, we can quickly special order it.",
+  },
+];
+
 export default function NutritionPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
       {/* Hero */}
       <section className="bg-forest-dark text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
@@ -147,6 +188,8 @@ export default function NutritionPage() {
         </div>
       </section>
 
+      <FAQSection items={faqItems} />
+
       {/* CTA */}
       <section className="py-16 md:py-20 bg-forest text-white text-center">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -160,14 +203,14 @@ export default function NutritionPage() {
             NW Portland communities.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="tel:503-291-1757"
+            <PhoneLink
+              location="nutrition_cta"
               className="inline-flex items-center justify-center gap-2 bg-forest-dark text-white px-8 py-4 rounded font-semibold text-lg hover:bg-forest-darkest transition-colors"
             >
               (503) 291-1757
-            </a>
+            </PhoneLink>
             <Link
-              href="/services"
+              href="/services/"
               className="inline-flex items-center justify-center bg-white text-forest-dark px-8 py-4 rounded font-semibold text-lg hover:bg-gray-100 transition-colors"
             >
               All Services

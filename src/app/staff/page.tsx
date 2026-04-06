@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import PhoneLink from "@/components/PhoneLink";
 
 export const metadata: Metadata = {
   title: "Meet Our Staff",
@@ -219,12 +220,12 @@ export default function StaffPage() {
             We&apos;d love to meet you and your pet. Call us to schedule an
             appointment.
           </p>
-          <a
-            href="tel:503-291-1757"
+          <PhoneLink
+            location="staff_cta"
             className="inline-flex items-center justify-center gap-2 bg-forest-dark text-white px-8 py-4 rounded font-semibold text-lg hover:bg-forest-darkest transition-colors"
           >
             (503) 291-1757
-          </a>
+          </PhoneLink>
         </div>
       </section>
     </>

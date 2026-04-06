@@ -5,8 +5,12 @@ export interface BlogPost {
   slug: string;
   title: string;
   date: string;
+  dateModified?: string;
   description: string;
   category: string;
+  author: string;
+  authorSlug?: string;
+  image?: string;
   content: string;
 }
 

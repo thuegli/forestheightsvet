@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import PhoneLink from "./PhoneLink";
 
 const associations = [
   {
@@ -64,12 +65,12 @@ export default function Footer() {
               <p>Portland, OR 97225</p>
               <p className="mt-3">
                 Ph:{" "}
-                <a
-                  href="tel:503-291-1757"
+                <PhoneLink
+                  location="footer"
                   className="text-white hover:text-forest-light transition-colors font-semibold"
                 >
                   (503) 291-1757
-                </a>
+                </PhoneLink>
               </p>
               <p>Fax: (503) 291-1773</p>
               <p className="mt-2">
