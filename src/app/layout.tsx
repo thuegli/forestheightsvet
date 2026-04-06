@@ -29,7 +29,6 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     siteName: "Forest Heights Veterinary Clinic",
-    images: [{ url: "/images/storefront.jpg", width: 1200, height: 630 }],
   },
 };
 

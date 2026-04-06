@@ -53,6 +53,15 @@ export default async function BlogPostPage({
   const wordCount = post.content.split(/\s+/).filter(Boolean).length;
   const readingTime = Math.max(1, Math.ceil(wordCount / 200));
 
+  // Find up to 2 related posts: prefer same category, fall back to most recent
+  const sameCategory = posts.filter(
+    (p) => p.slug !== post.slug && p.category === post.category
+  );
+  const others = posts.filter(
+    (p) => p.slug !== post.slug && p.category !== post.category
+  );
+  const relatedPosts = [...sameCategory, ...others].slice(0, 2);
+
   const articleJsonLd = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -164,6 +173,46 @@ export default async function BlogPostPage({
           />
         </div>
       </article>
+
+      {/* Related Posts */}
+      {relatedPosts.length > 0 && (
+        <section className="py-16 md:py-20 bg-gray-50 border-t border-gray-100">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="font-heading text-2xl md:text-3xl font-bold text-gray-900 text-center mb-10">
+              Keep Reading
+            </h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              {relatedPosts.map((related) => {
+                const relatedDate = new Date(
+                  related.date + "T12:00:00"
+                ).toLocaleDateString("en-US", {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                });
+                return (
+                  <Link
+                    key={related.slug}
+                    href={`/blog/${related.slug}/`}
+                    className="group bg-white rounded-lg p-6 border border-gray-200 hover:border-forest hover:shadow-md transition-all flex flex-col"
+                  >
+                    <div className="text-xs font-semibold tracking-widest uppercase text-forest mb-3">
+                      {related.category}
+                    </div>
+                    <h3 className="font-heading text-xl font-bold text-gray-900 group-hover:text-forest-dark transition-colors mb-2">
+                      {related.title}
+                    </h3>
+                    <p className="text-gray-600 text-sm leading-relaxed mb-4 flex-grow">
+                      {related.description}
+                    </p>
+                    <div className="text-sm text-gray-500">{relatedDate}</div>
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* CTA */}
       <section className="py-16 md:py-20 bg-forest text-white text-center">
