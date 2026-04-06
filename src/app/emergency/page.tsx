@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PhoneLink from "@/components/PhoneLink";
 import FAQSection from "@/components/FAQSection";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Emergency Veterinary Care",
@@ -62,6 +63,12 @@ const faqItems = [
 export default function EmergencyPage() {
   return (
     <>
+      <Breadcrumbs
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Emergency", href: "/emergency/" },
+        ]}
+      />
       {/* Hero */}
       <section className="bg-coral-darkest text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
@@ -201,7 +208,7 @@ export default function EmergencyPage() {
             <p className="text-forest-dark text-sm">
               Regular preventive care can help avoid many emergencies.{" "}
               <Link
-                href="/wellness"
+                href="/wellness/"
                 className="font-semibold underline hover:text-forest transition-colors"
               >
                 Learn about our wellness exams

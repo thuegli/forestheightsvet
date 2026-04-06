@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import PhoneLink from "@/components/PhoneLink";
 import FAQSection from "@/components/FAQSection";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Wellness & Preventive Care",
@@ -63,6 +64,13 @@ export default function WellnessPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
       />
+      <Breadcrumbs
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Services", href: "/services/" },
+          { name: "Wellness", href: "/wellness/" },
+        ]}
+      />
       {/* Hero */}
       <section className="bg-forest-dark text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
@@ -113,6 +121,30 @@ export default function WellnessPage() {
               dental care. Dental disease not only causes discomfort and
               inflammation in the mouth — it can also significantly impact the
               kidneys, liver, and heart.
+            </p>
+
+            <h2 className="font-heading text-2xl md:text-3xl font-bold text-gray-900 mt-12 mb-4">
+              Senior Pet Wellness
+            </h2>
+            <p className="text-gray-600 leading-relaxed">
+              Looking for a senior dog vet in Portland or a geriatric cat exam
+              in NW Portland? Dogs are generally considered senior around age 7
+              (sooner for large and giant breeds) and cats around age 10. As
+              pets enter their senior years, the way we care for them needs to
+              change. We recommend twice-yearly wellness exams for senior pets
+              because age-related changes can develop quickly between annual
+              visits — early detection gives us the most options.
+            </p>
+            <p className="text-gray-600 leading-relaxed mt-4">
+              A typical senior wellness visit at Forest Heights includes a
+              detailed physical exam, baseline bloodwork (CBC and chemistry
+              panel), urinalysis, blood pressure measurement, and a thyroid
+              check when indicated. We also evaluate mobility and joint
+              comfort, screen for cognitive changes, and discuss pain
+              management, nutrition adjustments, and quality-of-life concerns.
+              Catching kidney disease, diabetes, hyperthyroidism, arthritis, or
+              dental disease early often means a longer, more comfortable life
+              for your senior pet.
             </p>
           </div>
         </div>

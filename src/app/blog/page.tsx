@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import posts from "./posts";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Blog",
@@ -22,6 +23,12 @@ export default function BlogPage() {
 
   return (
     <>
+      <Breadcrumbs
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Blog", href: "/blog/" },
+        ]}
+      />
       {/* Hero */}
       <section className="bg-forest-dark text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
@@ -48,7 +55,7 @@ export default function BlogPage() {
               return (
                 <Link
                   key={post.slug}
-                  href={`/blog/${post.slug}`}
+                  href={`/blog/${post.slug}/`}
                   className="group bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition-shadow"
                 >
                   <div className="p-6">

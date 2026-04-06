@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import PhoneLink from "@/components/PhoneLink";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Meet Our Staff",
@@ -17,24 +18,152 @@ export const metadata: Metadata = {
 
 const doctors = [
   {
+    slug: "dr-tracy-mento",
     name: "Dr. Tracy Mento, DVM",
     role: "Owner & Veterinarian",
     image: "/images/staff-10.jpg",
     bio: "Dr. Mento has owned Forest Heights Veterinary Clinic since 2013. She attended University of California, San Diego, and received her BS in Biochemistry and Cell Biology, Cum Laude in 2000. In 2004, she graduated from University of California, Davis, with her DVM degree. She is a member of the Portland Veterinary Medical Association, the Oregon Veterinary Medical Association, the American Veterinary Medical Association, and the American Association of Feline Practitioners. Outside the hospital, she volunteers for the Pixie Project and Columbia Humane Society. Dr. Mento is a pet parent to Lucy, a 16 year old tuxedo DSH cat she adopted as an orphan kitten while in vet school, and Asha, a 1 year old grey kitty adopted from Forest Heights Veterinary Clinic. Her hobbies include travel, scuba diving, and backpacking.",
   },
   {
+    slug: "dr-tammy-tomschin",
     name: "Dr. Tammy Tomschin, DVM",
     role: "Veterinarian",
     image: "/images/staff-dsc1361.jpg",
     bio: "Dr. Tomschin attended Oregon State University, achieving her DVM degree in 1999. She is a member of the Portland Veterinary Medical Association, Oregon Veterinary Medical Association, and the American Veterinary Medical Association. Dr. Tomschin's interest in veterinary medicine all started after her family got their first dog. She was involved in 4-H throughout middle school and high school and also showed dogs for the AKC. She enjoys taking cooking classes, going on hikes with her pups, knitting, and swimming. She has two dogs, Sonja, a 13 year old Lab/Rhodesian Mix, and Sander, a 9 year old Cockapoo, and a one-eyed black and white kitty named Cookie.",
   },
   {
+    slug: "dr-lyn-bedsaul",
     name: "Dr. Lyn Bedsaul, DVM, CCRP",
     role: "Veterinarian",
     image: "/images/staff-img1811.jpg",
     bio: "Dr. Bedsaul attended the University of Tennessee for undergrad and veterinary school. She graduated in 2000 and received the Gentle Doctor Award. In 2013, she went back to UT to complete her CCRP (Certified Canine Rehabilitation Practitioner), which is similar to a physical therapist for dogs. She is a member of the Portland Veterinary Medical Association, the Oregon Veterinary Medical Association, and the American Veterinary Medical Association. The Bedsaul family loves outdoor adventures including biking, skiing, camping, and paddle boarding.",
   },
 ];
+
+const staffJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://www.forestheightsvet.com/staff/#dr-tracy-mento",
+      name: "Tracy Mento",
+      honorificPrefix: "Dr.",
+      honorificSuffix: "DVM",
+      jobTitle: "Owner & Veterinarian",
+      worksFor: {
+        "@type": "VeterinaryCare",
+        name: "Forest Heights Veterinary Clinic",
+        url: "https://www.forestheightsvet.com",
+      },
+      image: "https://www.forestheightsvet.com/images/staff-10.jpg",
+      url: "https://www.forestheightsvet.com/staff/#dr-tracy-mento",
+      alumniOf: [
+        {
+          "@type": "CollegeOrUniversity",
+          name: "University of California, San Diego",
+        },
+        {
+          "@type": "CollegeOrUniversity",
+          name: "University of California, Davis School of Veterinary Medicine",
+        },
+      ],
+      hasCredential: {
+        "@type": "EducationalOccupationalCredential",
+        credentialCategory: "degree",
+        name: "Doctor of Veterinary Medicine (DVM)",
+      },
+      memberOf: [
+        { "@type": "Organization", name: "Portland Veterinary Medical Association" },
+        { "@type": "Organization", name: "Oregon Veterinary Medical Association" },
+        { "@type": "Organization", name: "American Veterinary Medical Association" },
+        { "@type": "Organization", name: "American Association of Feline Practitioners" },
+      ],
+      knowsAbout: [
+        "Small Animal Medicine",
+        "Preventive Care",
+        "Feline Medicine",
+        "Surgery",
+        "Dentistry",
+      ],
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.forestheightsvet.com/staff/#dr-tammy-tomschin",
+      name: "Tammy Tomschin",
+      honorificPrefix: "Dr.",
+      honorificSuffix: "DVM",
+      jobTitle: "Veterinarian",
+      worksFor: {
+        "@type": "VeterinaryCare",
+        name: "Forest Heights Veterinary Clinic",
+        url: "https://www.forestheightsvet.com",
+      },
+      image: "https://www.forestheightsvet.com/images/staff-dsc1361.jpg",
+      url: "https://www.forestheightsvet.com/staff/#dr-tammy-tomschin",
+      alumniOf: {
+        "@type": "CollegeOrUniversity",
+        name: "Oregon State University College of Veterinary Medicine",
+      },
+      hasCredential: {
+        "@type": "EducationalOccupationalCredential",
+        credentialCategory: "degree",
+        name: "Doctor of Veterinary Medicine (DVM)",
+      },
+      memberOf: [
+        { "@type": "Organization", name: "Portland Veterinary Medical Association" },
+        { "@type": "Organization", name: "Oregon Veterinary Medical Association" },
+        { "@type": "Organization", name: "American Veterinary Medical Association" },
+      ],
+      knowsAbout: [
+        "Small Animal Medicine",
+        "Preventive Care",
+        "Surgery",
+      ],
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.forestheightsvet.com/staff/#dr-lyn-bedsaul",
+      name: "Lyn Bedsaul",
+      honorificPrefix: "Dr.",
+      honorificSuffix: "DVM, CCRP",
+      jobTitle: "Veterinarian",
+      worksFor: {
+        "@type": "VeterinaryCare",
+        name: "Forest Heights Veterinary Clinic",
+        url: "https://www.forestheightsvet.com",
+      },
+      image: "https://www.forestheightsvet.com/images/staff-img1811.jpg",
+      url: "https://www.forestheightsvet.com/staff/#dr-lyn-bedsaul",
+      alumniOf: {
+        "@type": "CollegeOrUniversity",
+        name: "University of Tennessee College of Veterinary Medicine",
+      },
+      hasCredential: [
+        {
+          "@type": "EducationalOccupationalCredential",
+          credentialCategory: "degree",
+          name: "Doctor of Veterinary Medicine (DVM)",
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          credentialCategory: "certification",
+          name: "Certified Canine Rehabilitation Practitioner (CCRP)",
+        },
+      ],
+      award: "Gentle Doctor Award",
+      memberOf: [
+        { "@type": "Organization", name: "Portland Veterinary Medical Association" },
+        { "@type": "Organization", name: "Oregon Veterinary Medical Association" },
+        { "@type": "Organization", name: "American Veterinary Medical Association" },
+      ],
+      knowsAbout: [
+        "Small Animal Medicine",
+        "Canine Rehabilitation",
+        "Preventive Care",
+      ],
+    },
+  ],
+};
 
 const team = [
   {
@@ -102,6 +231,16 @@ const team = [
 export default function StaffPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(staffJsonLd) }}
+      />
+      <Breadcrumbs
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Staff", href: "/staff/" },
+        ]}
+      />
       {/* Hero */}
       <section className="bg-forest-dark text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
@@ -127,8 +266,9 @@ export default function StaffPage() {
           <div className="space-y-16">
             {doctors.map((doctor) => (
               <div
-                key={doctor.name}
-                className="flex flex-col md:flex-row gap-8 items-start"
+                key={doctor.slug}
+                id={doctor.slug}
+                className="flex flex-col md:flex-row gap-8 items-start scroll-mt-24"
               >
                 <div className="w-full md:w-64 flex-shrink-0">
                   <div className="relative aspect-[3/4] rounded-lg overflow-hidden shadow-md">

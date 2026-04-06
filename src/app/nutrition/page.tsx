@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import PhoneLink from "@/components/PhoneLink";
 import FAQSection from "@/components/FAQSection";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Nutrition Counseling",
@@ -59,6 +60,13 @@ export default function NutritionPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
       />
+      <Breadcrumbs
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Services", href: "/services/" },
+          { name: "Nutrition", href: "/nutrition/" },
+        ]}
+      />
       {/* Hero */}
       <section className="bg-forest-dark text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
@@ -104,6 +112,92 @@ export default function NutritionPage() {
               be used to treat or prevent many medical conditions. These
               therapeutic diets are formulated specifically by veterinary
               nutritionists and are only available through veterinary clinics.
+            </p>
+
+            <h2 className="font-heading text-2xl md:text-3xl font-bold text-gray-900 mt-12 mb-4">
+              Therapeutic Diet Categories
+            </h2>
+            <p className="text-gray-600 leading-relaxed">
+              Veterinary therapeutic diets are designed to help manage specific
+              medical conditions. Here are the categories we most often
+              prescribe at Forest Heights:
+            </p>
+            <ul className="list-disc pl-6 space-y-2 text-gray-600 leading-relaxed mt-4">
+              <li>
+                <strong className="text-gray-900">
+                  Renal / kidney support
+                </strong>{" "}
+                — lower-phosphorus, controlled-protein formulas to slow the
+                progression of chronic kidney disease.
+              </li>
+              <li>
+                <strong className="text-gray-900">Cardiac</strong> — sodium-
+                and protein-balanced diets for pets diagnosed with heart
+                disease.
+              </li>
+              <li>
+                <strong className="text-gray-900">Gastrointestinal</strong> —
+                highly digestible diets to settle vomiting, diarrhea, IBD, or
+                pancreatitis flare-ups.
+              </li>
+              <li>
+                <strong className="text-gray-900">Urinary</strong> — formulas
+                designed to dissolve struvite crystals or prevent calcium
+                oxalate stones, especially common in cats.
+              </li>
+              <li>
+                <strong className="text-gray-900">
+                  Hydrolyzed / hypoallergenic
+                </strong>{" "}
+                — for pets with confirmed food allergies or chronic itchy
+                skin.
+              </li>
+              <li>
+                <strong className="text-gray-900">
+                  Joint &amp; mobility
+                </strong>{" "}
+                — added omega-3s, glucosamine, and chondroitin to support
+                arthritic dogs and cats.
+              </li>
+              <li>
+                <strong className="text-gray-900">Weight management</strong> —
+                calorie-controlled diets that keep pets feeling full while
+                they slim down to a healthy body condition.
+              </li>
+            </ul>
+
+            <h2 className="font-heading text-2xl md:text-3xl font-bold text-gray-900 mt-12 mb-4">
+              Feeding Through Each Life Stage
+            </h2>
+            <p className="text-gray-600 leading-relaxed">
+              Nutritional needs change as pets age. Puppies and kittens need
+              calorie-dense, growth-formula diets that support healthy bone,
+              muscle, and brain development — and large-breed puppies in
+              particular need controlled calcium levels to protect developing
+              joints. Adult pets do best on a maintenance diet matched to
+              their activity level: a working dog and a couch companion of the
+              same breed can have very different caloric needs. Senior pets
+              (dogs 7+ and cats 10+) often benefit from diets with adjusted
+              protein, added joint support, and antioxidants. We&apos;ll
+              recommend transitions at the appropriate ages during your
+              pet&apos;s wellness exams.
+            </p>
+
+            <h2 className="font-heading text-2xl md:text-3xl font-bold text-gray-900 mt-12 mb-4">
+              Weight Management
+            </h2>
+            <p className="text-gray-600 leading-relaxed">
+              Roughly half of dogs and cats in the U.S. carry extra weight,
+              and even a few extra pounds can contribute to arthritis,
+              diabetes, heart disease, and a shorter lifespan. At wellness
+              visits, we calculate your pet&apos;s ideal body condition score
+              and a daily caloric target based on weight, age, and activity.
+              For pets who need to lose, we build a gradual plan that includes
+              a measured-portion diet (a kitchen scale beats a measuring cup),
+              treat budgeting, and regular weigh-ins. Sudden weight loss is
+              also a red flag we take seriously — unexplained drops can point
+              to dental pain, kidney disease, hyperthyroidism, or diabetes,
+              and warrant a closer look.
             </p>
           </div>
         </div>

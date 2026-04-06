@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import ServiceCard from "@/components/ServiceCard";
 import PhoneLink from "@/components/PhoneLink";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Veterinary Services",
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
 
 const services = [
   {
-    href: "/wellness",
+    href: "/wellness/",
     title: "Wellness & Preventive Care",
     description:
       "Annual exams, vaccinations, parasite prevention, and routine screenings to keep your pet healthy year-round.",
@@ -30,7 +31,7 @@ const services = [
     ),
   },
   {
-    href: "/dentistry",
+    href: "/dentistry/",
     title: "Dentistry",
     description:
       "Complete dental cleanings, digital dental X-rays, extractions, and oral surgery to maintain your pet's oral health.",
@@ -41,7 +42,7 @@ const services = [
     ),
   },
   {
-    href: "/surgery",
+    href: "/surgery/",
     title: "Surgery & Anesthesia",
     description:
       "Safe surgical procedures with modern anesthesia protocols, IV fluids, and comprehensive monitoring throughout.",
@@ -52,7 +53,7 @@ const services = [
     ),
   },
   {
-    href: "/diagnostics",
+    href: "/diagnostics/",
     title: "Diagnostics",
     description:
       "In-house laboratory, digital X-ray, digital dental X-ray, and ultrasound for fast, accurate diagnoses.",
@@ -63,7 +64,7 @@ const services = [
     ),
   },
   {
-    href: "/nutrition",
+    href: "/nutrition/",
     title: "Nutrition Counseling",
     description:
       "Personalized diet plans and nutritional guidance tailored to your pet's age, breed, and health needs.",
@@ -74,7 +75,7 @@ const services = [
     ),
   },
   {
-    href: "/pharmacy",
+    href: "/pharmacy/",
     title: "In-House Pharmacy",
     description:
       "Convenient on-site pharmacy with prescription medications, preventatives, and supplements.",
@@ -89,6 +90,12 @@ const services = [
 export default function ServicesPage() {
   return (
     <>
+      <Breadcrumbs
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Services", href: "/services/" },
+        ]}
+      />
       {/* Hero */}
       <section className="bg-forest-dark text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
@@ -103,8 +110,8 @@ export default function ServicesPage() {
 
       {/* Intro */}
       <section className="py-16 md:py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-lg text-gray-600 leading-relaxed">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-lg text-gray-600 leading-relaxed text-center">
             Forest Heights Veterinary Clinic is a full-service medical facility
             providing services ranging from wellness care and vaccines to
             critical care and surgery. We welcome and encourage our clients to
@@ -112,6 +119,69 @@ export default function ServicesPage() {
             communication and strong connections with our patients is the most
             effective way we can truly fulfill our mission of providing the
             highest quality medical care.
+          </p>
+
+          <h2 className="font-heading text-2xl md:text-3xl font-bold text-gray-900 mt-12 mb-4">
+            Why One Roof Matters
+          </h2>
+          <p className="text-gray-600 leading-relaxed">
+            When wellness exams, diagnostics, pharmacy, dentistry, and surgery
+            all happen under the same roof with the same team, your pet&apos;s
+            care moves faster and feels less stressful. A vet who notices
+            something off during a{" "}
+            <Link
+              href="/wellness/"
+              className="text-forest hover:text-forest-dark underline"
+            >
+              wellness exam
+            </Link>{" "}
+            can run bloodwork or take an X-ray in our{" "}
+            <Link
+              href="/diagnostics/"
+              className="text-forest hover:text-forest-dark underline"
+            >
+              in-house lab
+            </Link>{" "}
+            within minutes — not days. If a{" "}
+            <Link
+              href="/dentistry/"
+              className="text-forest hover:text-forest-dark underline"
+            >
+              dental cleaning
+            </Link>{" "}
+            uncovers a tooth that needs to come out, our{" "}
+            <Link
+              href="/surgery/"
+              className="text-forest hover:text-forest-dark underline"
+            >
+              surgical team
+            </Link>{" "}
+            can plan the extraction without sending you to a stranger across
+            town.
+          </p>
+          <p className="text-gray-600 leading-relaxed mt-4">
+            Continuity matters too. The same veterinarians who know your
+            pet&apos;s history are the ones reading their X-rays, prescribing
+            from our{" "}
+            <Link
+              href="/pharmacy/"
+              className="text-forest hover:text-forest-dark underline"
+            >
+              in-house pharmacy
+            </Link>
+            , and adjusting their{" "}
+            <Link
+              href="/nutrition/"
+              className="text-forest hover:text-forest-dark underline"
+            >
+              nutrition plan
+            </Link>
+            . Pets see fewer unfamiliar faces, families get fewer phone-tag
+            handoffs, and small problems get caught before they become big
+            ones. For pets who experience anxiety at the vet — or for owners
+            juggling multiple appointments around work — that single-team
+            approach is the difference between care that feels rushed and care
+            that feels like a real relationship.
           </p>
         </div>
       </section>
@@ -149,13 +219,13 @@ export default function ServicesPage() {
           </h2>
           <div className="flex flex-wrap justify-center gap-4">
             <Link
-              href="/emergency"
+              href="/emergency/"
               className="bg-coral/10 text-coral-dark px-6 py-3 rounded-lg font-semibold hover:bg-coral/20 transition-colors"
             >
               Emergency Care
             </Link>
             <Link
-              href="/euthanasia"
+              href="/euthanasia/"
               className="bg-forest-lightest text-forest-dark px-6 py-3 rounded-lg font-semibold hover:bg-forest-light/20 transition-colors"
             >
               End-of-Life Care

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import posts from "../posts";
 import PhoneLink from "@/components/PhoneLink";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export function generateStaticParams() {
   return posts.map((post) => ({ slug: post.slug }));
@@ -106,6 +107,13 @@ export default async function BlogPostPage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
+      <Breadcrumbs
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Blog", href: "/blog/" },
+          { name: post.title, href: `/blog/${slug}/` },
+        ]}
       />
       {/* Hero */}
       <section className="bg-forest-dark text-white">

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import PhoneLink from "@/components/PhoneLink";
 import FAQSection from "@/components/FAQSection";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Euthanasia Services",
@@ -61,6 +62,13 @@ export default function EuthanasiaPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
+      <Breadcrumbs
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Services", href: "/services/" },
+          { name: "End-of-Life Care", href: "/euthanasia/" },
+        ]}
       />
       {/* Hero */}
       <section className="bg-forest-dark text-white">

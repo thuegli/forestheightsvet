@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import PhoneLink from "@/components/PhoneLink";
 import FAQSection from "@/components/FAQSection";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Contact Us",
@@ -35,6 +36,12 @@ const faqItems = [
 export default function ContactPage() {
   return (
     <>
+      <Breadcrumbs
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Contact", href: "/contact/" },
+        ]}
+      />
       {/* Hero */}
       <section className="bg-forest-dark text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">

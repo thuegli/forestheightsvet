@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 
 const services = [
   {
-    href: "/wellness",
+    href: "/wellness/",
     title: "Wellness",
     description: "Preventive care and annual exams to keep your pet healthy.",
     icon: (
@@ -31,7 +31,7 @@ const services = [
     ),
   },
   {
-    href: "/dentistry",
+    href: "/dentistry/",
     title: "Dentistry",
     description: "Comprehensive dental cleanings, exams, and oral surgery.",
     icon: (
@@ -41,7 +41,7 @@ const services = [
     ),
   },
   {
-    href: "/surgery",
+    href: "/surgery/",
     title: "Surgery",
     description: "Safe surgical procedures with modern anesthesia protocols.",
     icon: (
@@ -51,7 +51,7 @@ const services = [
     ),
   },
   {
-    href: "/diagnostics",
+    href: "/diagnostics/",
     title: "Diagnostics",
     description: "In-house lab, digital X-ray, and ultrasound imaging.",
     icon: (
@@ -61,7 +61,7 @@ const services = [
     ),
   },
   {
-    href: "/nutrition",
+    href: "/nutrition/",
     title: "Nutrition",
     description: "Personalized diet and nutrition counseling for your pet.",
     icon: (
@@ -71,7 +71,7 @@ const services = [
     ),
   },
   {
-    href: "/pharmacy",
+    href: "/pharmacy/",
     title: "Pharmacy",
     description: "In-house pharmacy for convenient prescription fulfillment.",
     icon: (
@@ -202,7 +202,7 @@ export default function Home() {
               { name: "Dr. Tammy Tomschin, DVM", role: "Veterinarian", image: "/images/staff-dsc1361.jpg" },
               { name: "Dr. Lyn Bedsaul, DVM, CCRP", role: "Veterinarian", image: "/images/staff-img1811.jpg" },
             ].map((doc) => (
-              <Link key={doc.name} href="/staff" className="group text-center">
+              <Link key={doc.name} href="/staff/" className="group text-center">
                 <div className="relative aspect-[3/4] rounded-lg overflow-hidden shadow-md mb-4">
                   <Image
                     src={doc.image}
@@ -220,7 +220,7 @@ export default function Home() {
           </div>
           <div className="text-center mt-8">
             <Link
-              href="/staff"
+              href="/staff/"
               className="inline-flex items-center gap-2 text-forest font-semibold hover:text-forest-dark transition-colors"
             >
               Meet the full team &rarr;

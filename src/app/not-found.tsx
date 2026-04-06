@@ -44,7 +44,7 @@ export default function NotFound() {
             </Link>
 
             <Link
-              href="/services"
+              href="/services/"
               className="flex flex-col items-center gap-2 p-6 rounded-lg border border-gray-200 hover:border-forest hover:shadow-md transition-all"
             >
               <svg
@@ -64,7 +64,7 @@ export default function NotFound() {
             </Link>
 
             <Link
-              href="/contact"
+              href="/contact/"
               className="flex flex-col items-center gap-2 p-6 rounded-lg border border-gray-200 hover:border-forest hover:shadow-md transition-all"
             >
               <svg

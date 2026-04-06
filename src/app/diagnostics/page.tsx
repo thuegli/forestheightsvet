@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import PhoneLink from "@/components/PhoneLink";
 import FAQSection from "@/components/FAQSection";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Diagnostic Services",
@@ -59,6 +60,13 @@ export default function DiagnosticsPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
       />
+      <Breadcrumbs
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Services", href: "/services/" },
+          { name: "Diagnostics", href: "/diagnostics/" },
+        ]}
+      />
       {/* Hero */}
       <section className="bg-forest-dark text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
@@ -81,6 +89,84 @@ export default function DiagnosticsPage() {
             in-house lab machines. From pet X-rays to bloodwork, our NW
             Portland clinic delivers fast, accurate results so treatment can
             begin sooner.
+          </p>
+
+          <h2 className="font-heading text-2xl md:text-3xl font-bold text-gray-900 mt-12 mb-4">
+            When We Recommend Diagnostics
+          </h2>
+          <p className="text-gray-600 leading-relaxed">
+            Diagnostic testing isn&apos;t about ordering every test we can — it&apos;s
+            about answering a specific question your veterinarian has after
+            the physical exam. The most common reasons we recommend diagnostics
+            include:
+          </p>
+          <ul className="list-disc pl-6 space-y-2 text-gray-600 leading-relaxed mt-4">
+            <li>
+              <strong className="text-gray-900">
+                Pre-anesthetic screening
+              </strong>{" "}
+              — bloodwork before any sedated or surgical procedure to confirm
+              organ function and catch hidden anesthesia risks.
+            </li>
+            <li>
+              <strong className="text-gray-900">Unexplained symptoms</strong> —
+              vomiting, weight loss, drinking more, limping, or coughing that
+              hasn&apos;t resolved on its own.
+            </li>
+            <li>
+              <strong className="text-gray-900">
+                Chronic disease monitoring
+              </strong>{" "}
+              — periodic rechecks for kidney disease, diabetes, thyroid
+              disease, or pets on long-term medications.
+            </li>
+            <li>
+              <strong className="text-gray-900">
+                Senior wellness baselines
+              </strong>{" "}
+              — annual or twice-yearly screening to detect age-related changes
+              early, when treatment options are widest.
+            </li>
+            <li>
+              <strong className="text-gray-900">Trauma or acute illness</strong>{" "}
+              — to rule out fractures, internal bleeding, foreign-body
+              ingestion, or organ damage.
+            </li>
+          </ul>
+
+          <h2 className="font-heading text-2xl md:text-3xl font-bold text-gray-900 mt-12 mb-4">
+            In-House vs. Send-Out Testing
+          </h2>
+          <p className="text-gray-600 leading-relaxed">
+            Most of the testing your pet needs happens right here at Forest
+            Heights. Our in-house lab handles complete blood counts, chemistry
+            panels, electrolytes, urinalysis, fecal exams, and many infectious
+            disease tests with results back in 15–30 minutes — fast enough to
+            adjust the treatment plan during the same visit. Digital X-rays
+            and ultrasound are also same-day. For more specialized testing —
+            biopsies and histopathology, hormone panels, culture and
+            sensitivity, advanced thyroid testing — we partner with IDEXX, our
+            reference laboratory, with most results returned within 24 hours.
+            For complex imaging studies, we can email digital X-rays to a
+            board-certified veterinary radiologist for a written
+            interpretation, usually within 12–24 hours.
+          </p>
+
+          <h2 className="font-heading text-2xl md:text-3xl font-bold text-gray-900 mt-12 mb-4">
+            What to Expect
+          </h2>
+          <p className="text-gray-600 leading-relaxed">
+            For most blood draws, your pet doesn&apos;t need to fast unless
+            we&apos;re running specific tests like a glucose curve — we&apos;ll
+            tell you in advance if any prep is needed. Routine X-rays usually
+            take just a few minutes and most cooperative pets don&apos;t
+            require sedation; for ultrasound, abdominal imaging, or stressed
+            patients we may use light sedation to keep your pet still and
+            comfortable. We always discuss recommended testing, expected
+            costs, and turnaround time with you before we start, so there are
+            no surprises. After the results come back, your veterinarian will
+            walk you through what they mean and what — if anything — happens
+            next.
           </p>
         </div>
       </section>

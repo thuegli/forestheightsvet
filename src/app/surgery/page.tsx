@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import PhoneLink from "@/components/PhoneLink";
 import FAQSection from "@/components/FAQSection";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Surgery & Anesthesia",
@@ -78,6 +79,13 @@ export default function SurgeryPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
       />
+      <Breadcrumbs
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Services", href: "/services/" },
+          { name: "Surgery", href: "/surgery/" },
+        ]}
+      />
       {/* Hero */}
       <section className="bg-forest-dark text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
@@ -127,6 +135,46 @@ export default function SurgeryPage() {
               access overnight is usually fine, as we want your pet to be well
               hydrated. For geriatric pets or those with pre-existing conditions,
               additional tests may be recommended.
+            </p>
+
+            <h2 className="font-heading text-2xl md:text-3xl font-bold text-gray-900 mt-12 mb-4">
+              After Surgery: Recovery & Follow-Up
+            </h2>
+            <p className="text-gray-600 leading-relaxed">
+              Most pets go home the same afternoon as their surgery. The first
+              12–24 hours can look a little wobbly — sedation takes time to
+              wear off, and many pets are tired, quiet, or uninterested in
+              dinner that first night. A small, light meal that evening is
+              fine; full appetite usually returns within a day. We&apos;ll send
+              you home with detailed written instructions, any medications
+              needed for pain or infection prevention, and a direct number to
+              call if anything looks off.
+            </p>
+            <p className="text-gray-600 leading-relaxed mt-4">
+              For routine procedures like spay and neuter, plan on 10–14 days
+              of restricted activity: no running, jumping, swimming, rough
+              play, off-leash time, or unsupervised stair access. Keep an
+              e-collar (cone) on whenever you can&apos;t directly watch your
+              pet — even one good lick at a healing incision can undo the
+              repair. We&apos;ll schedule a recheck or suture removal at the
+              right time, and we recommend pairing post-op recovery with a
+              follow-up{" "}
+              <Link
+                href="/wellness/"
+                className="text-forest hover:text-forest-dark underline"
+              >
+                wellness check
+              </Link>{" "}
+              if it&apos;s been a while.
+            </p>
+            <p className="text-gray-600 leading-relaxed mt-4">
+              <strong className="text-gray-900">When to call us:</strong>{" "}
+              redness, swelling, or discharge at the incision; bleeding that
+              doesn&apos;t stop; refusing food for more than 24 hours; severe
+              lethargy lasting beyond the first day; vomiting or diarrhea;
+              difficulty urinating; or any pain that doesn&apos;t improve with
+              the prescribed medication. If you&apos;re unsure, call —
+              we&apos;d much rather hear from you early.
             </p>
           </div>
         </div>

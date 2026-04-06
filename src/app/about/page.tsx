@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import PhoneLink from "@/components/PhoneLink";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "About Our Clinic",
@@ -18,6 +19,12 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
+      <Breadcrumbs
+        items={[
+          { name: "Home", href: "/" },
+          { name: "About", href: "/about/" },
+        ]}
+      />
       {/* Hero */}
       <section className="bg-forest-dark text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">

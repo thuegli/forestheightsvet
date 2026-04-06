@@ -182,10 +182,10 @@ export default function Footer() {
 
             <div className="flex items-center gap-4">
               {[
-                { href: "/about", label: "About" },
-                { href: "/services", label: "Services" },
-                { href: "/blog", label: "Blog" },
-                { href: "/contact", label: "Contact" },
+                { href: "/about/", label: "About" },
+                { href: "/services/", label: "Services" },
+                { href: "/blog/", label: "Blog" },
+                { href: "/contact/", label: "Contact" },
               ].map((link) => (
                 <Link
                   key={link.href}
