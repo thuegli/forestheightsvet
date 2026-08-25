@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import ServiceCard from "@/components/ServiceCard";
+import Testimonials from "@/components/Testimonials";
 import PhoneLink from "@/components/PhoneLink";
 
 export const metadata: Metadata = {
@@ -230,6 +231,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <Testimonials />
 
       {/* CTA Section */}
       <section className="py-16 md:py-20 bg-forest text-white text-center">

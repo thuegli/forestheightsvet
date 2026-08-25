@@ -1,0 +1,27 @@
+{
+  "_comment": [
+    "Real client reviews only. Every entry must be a genuine review a real",
+    "person left on a real platform — do not write these, and do not edit a",
+    "quote's meaning. Trimming for length is fine; mark trims with an ellipsis.",
+    "",
+    "Fabricated or materially altered testimonials are prohibited under the",
+    "FTC's Rule on the Use of Consumer Reviews and Testimonials (16 CFR 465),",
+    "which carries per-violation civil penalties.",
+    "",
+    "Field notes:",
+    "  quote    - the review text, trimmed if needed",
+    "  name     - as the reviewer signed it (usually first name + last initial)",
+    "  source   - Google | Yelp | Nextdoor | Facebook",
+    "  date     - YYYY-MM (when the review was left)",
+    "  url      - optional link to the review or the review platform listing",
+    "",
+    "This section does not render at all while the list is empty, so it is",
+    "safe to deploy before any quotes are added.",
+    "",
+    "Note: reviews shown here are NOT marked up as AggregateRating. Google has",
+    "not shown review rich results for self-hosted LocalBusiness reviews since",
+    "2019, and marking them up risks a structured-data manual action. These",
+    "exist to persuade visitors, not to win stars in search."
+  ],
+  "items": []
+}
