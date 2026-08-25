@@ -29,6 +29,10 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     siteName: "Forest Heights Veterinary Clinic",
+    images: ["/opengraph-image"],
+  },
+  twitter: {
+    card: "summary_large_image",
   },
 };
 
@@ -54,8 +58,8 @@ const jsonLd = {
   },
   geo: {
     "@type": "GeoCoordinates",
-    latitude: 45.5097,
-    longitude: -122.7638,
+    latitude: 45.5166,
+    longitude: -122.7532,
   },
   openingHoursSpecification: [
     {
@@ -63,6 +67,12 @@ const jsonLd = {
       dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
       opens: "08:00",
       closes: "18:00",
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Saturday", "Sunday"],
+      opens: "00:00",
+      closes: "00:00",
     },
   ],
   areaServed: [
@@ -86,8 +96,11 @@ const jsonLd = {
   priceRange: "$$",
   sameAs: [
     "https://www.facebook.com/Forest-Heights-Veterinary-Clinic-104537922938443/",
-    "https://www.instagram.com/explore/locations/270229209/",
     "https://www.yelp.com/biz/forest-heights-veterinary-clinic-portland",
+    // TODO: add the Google Business Profile URL — the single most valuable
+    // identity link for a local practice. Also add the clinic's real Instagram
+    // profile; the previous entry here pointed at an Instagram location tag
+    // page, which is not a profile.
   ],
 };
 

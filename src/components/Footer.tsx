@@ -137,7 +137,7 @@ export default function Footer() {
             <div className="rounded-lg overflow-hidden h-48">
               <iframe
                 title="Forest Heights Veterinary Clinic location"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2794.7!2d-122.7762!3d45.5124!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54950a3c8b7e7b9d%3A0x4b8e3c0e9e9e9e9e!2s7365%20SW%20Barnes%20Rd%20Suite%20H%2C%20Portland%2C%20OR%2097225!5e0!3m2!1sen!2sus!4v1"
+                src="https://www.google.com/maps?q=7365+SW+Barnes+Rd+Ste+H,+Portland,+OR+97225&output=embed"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

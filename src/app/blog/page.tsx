@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description:
       "Pet health tips, seasonal care advice, and veterinary insights from our NW Portland veterinary team.",
     url: "/blog/",
+    images: ["/opengraph-image"],
   },
 };
 

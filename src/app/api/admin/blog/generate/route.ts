@@ -13,6 +13,16 @@ Write a blog post that is:
 - Ends with a call to action mentioning the clinic phone number (503) 291-1757
 - Uses markdown headers (## ) to break up sections
 - Written for pet owners, not veterinary professionals
+- Includes 2–3 contextual internal links to the clinic's own service pages,
+  placed on naturally occurring phrases in the body (never a list of links at
+  the end). Use this exact HTML anchor form, which the blog renderer passes
+  through as-is:
+  <a href="/wellness/" class="text-forest-dark underline hover:no-underline">wellness exam</a>
+  Available targets: /wellness/ (exams, vaccines, senior care), /dentistry/
+  (dental cleanings, oral health), /surgery/ (surgery, anesthesia, spay/neuter),
+  /diagnostics/ (lab work, imaging, X-rays), /nutrition/ (diet, weight),
+  /pharmacy/ (medications, preventives, refills), /emergency/ (urgent care),
+  /euthanasia/ (end-of-life care). Only link where the topic genuinely matches.
 
 Choose a topic that is:
 - Seasonally relevant for the current time of year in Portland, Oregon

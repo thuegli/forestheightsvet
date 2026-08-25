@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import PhoneLink from "@/components/PhoneLink";
 import FAQSection from "@/components/FAQSection";
+import AppointmentForm from "@/components/AppointmentForm";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
     description:
       "Contact Forest Heights Veterinary Clinic in NW Portland. Call (503) 291-1757 or visit us at 7365 SW Barnes Rd, Suite H, Portland, OR 97225.",
     url: "/contact/",
+    images: ["/opengraph-image"],
   },
 };
 
@@ -215,6 +217,30 @@ export default function ContactPage() {
                 referrerPolicy="no-referrer-when-downgrade"
               />
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Appointment Request */}
+      <section id="appointment" className="py-16 md:py-20 bg-gray-50 scroll-mt-4">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-heading text-2xl md:text-3xl font-bold text-gray-900 mb-3">
+            Request an Appointment
+          </h2>
+          <p className="text-gray-600 mb-8">
+            Send us a few details and we&apos;ll call you back to confirm a
+            time, usually within one business day. Prefer to talk it through?
+            Call us at{" "}
+            <PhoneLink
+              location="appointment_section"
+              className="font-semibold text-forest-dark hover:underline"
+            >
+              (503) 291-1757
+            </PhoneLink>
+            .
+          </p>
+          <div className="bg-white border border-gray-200 rounded-lg p-6 md:p-8">
+            <AppointmentForm />
           </div>
         </div>
       </section>

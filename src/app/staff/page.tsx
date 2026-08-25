@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description:
       "Meet the veterinarians and support team at Forest Heights Veterinary Clinic in NW Portland.",
     url: "/staff/",
+    images: ["/opengraph-image"],
   },
 };
 
