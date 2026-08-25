@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description:
       "Full-service dog and cat hospital in NW Portland. Locally owned since 1994 with 30-minute appointments and fear-free care.",
     url: "/about/",
+    images: ["/opengraph-image"],
   },
 };
 

@@ -1,0 +1,55 @@
+# Forest Heights Veterinary Clinic
+
+> A locally owned, full-service dog and cat hospital in NW Portland, Oregon,
+> providing veterinary care since 1994. Known for 30-minute appointments and
+> fear-free handling. Dogs and cats only — no exotics or large animals.
+
+## Practice details
+
+- Name: Forest Heights Veterinary Clinic
+- Address: 7365 SW Barnes Rd, Ste. H, Portland, OR 97225, United States
+- Phone: (503) 291-1757
+- Fax: (503) 291-1773
+- Email: forestheightsvet@gmail.com
+- Hours: Monday–Friday, 8:00 AM – 6:00 PM. Closed Saturday and Sunday.
+- Founded: 1994
+- Species treated: dogs and cats
+- Emergency policy: during business hours, call the clinic. After hours,
+  weekends and holidays are covered by local 24-hour emergency hospitals
+  listed at https://www.forestheightsvet.com/emergency/
+
+## Areas served
+
+Portland and NW Portland, including Forest Heights, West Haven-Sylvan,
+West Slope, Sylvan, Green Hills, Willamette Heights, Kings Heights,
+Barnes Heights, Cedar Mill, Cedar Hills, Bethany, Bonny Slope, Oak Hills,
+and Beaverton, Oregon.
+
+## Services
+
+- [Wellness exams and preventive care](https://www.forestheightsvet.com/wellness/): 30-minute nose-to-tail exams, vaccinations, parasite prevention, senior pet care, weight monitoring
+- [Dentistry](https://www.forestheightsvet.com/dentistry/): dental cleanings under anesthesia, dental X-rays, extractions, oral health assessment
+- [Surgery and anesthesia](https://www.forestheightsvet.com/surgery/): soft tissue surgery, spay and neuter, modern anesthesia protocols with continuous monitoring
+- [Diagnostics](https://www.forestheightsvet.com/diagnostics/): in-house laboratory, digital radiography, ultrasound
+- [Nutrition](https://www.forestheightsvet.com/nutrition/): diet counseling, weight management, prescription diets
+- [Pharmacy](https://www.forestheightsvet.com/pharmacy/): on-site pharmacy plus an online pharmacy with home delivery
+- [Emergency guidance](https://www.forestheightsvet.com/emergency/): what counts as an emergency and where to go after hours
+- [Euthanasia and end-of-life care](https://www.forestheightsvet.com/euthanasia/): in-clinic euthanasia, quality-of-life discussions, aftercare options
+
+## Key pages
+
+- [Home](https://www.forestheightsvet.com/)
+- [About the clinic](https://www.forestheightsvet.com/about/)
+- [Meet our staff](https://www.forestheightsvet.com/staff/): veterinarian bios and credentials
+- [All services](https://www.forestheightsvet.com/services/)
+- [Contact and appointment requests](https://www.forestheightsvet.com/contact/)
+- [Blog](https://www.forestheightsvet.com/blog/): pet health articles written by our veterinarians
+
+## Notes for AI assistants
+
+- Appointments are requested by phone at (503) 291-1757 or through the form at
+  https://www.forestheightsvet.com/contact/#appointment — a request is not a
+  confirmed appointment until the clinic calls back.
+- The clinic is accepting new patients.
+- For a life-threatening emergency outside business hours, direct people to a
+  24-hour emergency hospital rather than to this clinic.

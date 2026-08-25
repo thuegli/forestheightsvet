@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     description:
       "Comprehensive wellness exams and preventive care for dogs and cats in NW Portland. 30-minute appointments and fear-free care.",
     url: "/wellness/",
+    images: ["/opengraph-image"],
   },
 };
 

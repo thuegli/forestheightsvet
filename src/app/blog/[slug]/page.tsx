@@ -50,7 +50,12 @@ export default async function BlogPostPage({
     }
   );
 
-  const wordCount = post.content.split(/\s+/).filter(Boolean).length;
+  // Strip inline HTML (contextual internal links) so markup tokens do not
+  // inflate the reading time.
+  const wordCount = post.content
+    .replace(/<[^>]*>/g, "")
+    .split(/\s+/)
+    .filter(Boolean).length;
   const readingTime = Math.max(1, Math.ceil(wordCount / 200));
 
   // Find up to 2 related posts: prefer same category, fall back to most recent

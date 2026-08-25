@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     description:
       "Safe pet surgery with modern anesthesia protocols in NW Portland. Spay, neuter, mass removal, and soft tissue surgery.",
     url: "/surgery/",
+    images: ["/opengraph-image"],
   },
 };
 

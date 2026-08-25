@@ -93,6 +93,7 @@ export default function Home() {
             alt="Cat on scale at Forest Heights Veterinary Clinic"
             fill
             className="object-cover object-top"
+            sizes="(min-width: 768px) 25vw, 50vw"
             priority
           />
         </div>
@@ -102,6 +103,7 @@ export default function Home() {
             alt="Veterinarian examining a dog with owner"
             fill
             className="object-cover"
+            sizes="(min-width: 768px) 25vw, 50vw"
             priority
           />
         </div>
@@ -111,7 +113,7 @@ export default function Home() {
             alt="Forest Heights Veterinary Clinic storefront"
             fill
             className="object-cover"
-            priority
+            sizes="(min-width: 768px) 25vw, 50vw"
           />
         </div>
         <div className="relative aspect-square md:aspect-[4/3]">
@@ -120,7 +122,7 @@ export default function Home() {
             alt="Chihuahua sitting on pet food bags"
             fill
             className="object-cover"
-            priority
+            sizes="(min-width: 768px) 25vw, 50vw"
           />
         </div>
       </section>

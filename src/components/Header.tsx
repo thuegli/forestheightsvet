@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import PhoneLink from "./PhoneLink";
+import { COVETRUS_URL } from "@/lib/constants";
 
 const serviceLinks = [
   { href: "/wellness/", label: "Wellness" },
@@ -37,8 +38,8 @@ export default function Header() {
           <Image
             src="/images/fhv-logo.png"
             alt="Forest Heights Veterinary Clinic — 7365 SW Barnes Rd, Ste. H, Portland, OR 97225 — (503) 291-1757"
-            width={700}
-            height={100}
+            width={960}
+            height={268}
             className="w-full max-w-2xl mx-auto h-auto"
             priority
           />
@@ -48,7 +49,7 @@ export default function Header() {
       {/* Desktop Nav */}
       <nav className="hidden md:block border-t border-gray-200">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <ul className="flex items-center justify-center gap-1">
+          <ul className="flex flex-wrap items-center justify-center gap-x-1 gap-y-1 py-1">
             {navLinks.map((link) =>
               link.children ? (
                 <li
@@ -56,26 +57,47 @@ export default function Header() {
                   className="relative"
                   onMouseEnter={() => setServicesOpen(true)}
                   onMouseLeave={() => setServicesOpen(false)}
+                  onFocus={() => setServicesOpen(true)}
+                  onBlur={(e) => {
+                    if (!e.currentTarget.contains(e.relatedTarget as Node)) {
+                      setServicesOpen(false);
+                    }
+                  }}
+                  onKeyDown={(e) => {
+                    if (e.key === "Escape") setServicesOpen(false);
+                  }}
                 >
-                  <Link
-                    href={link.href}
-                    className="px-4 py-4 text-sm font-medium text-gray-700 hover:text-forest-dark transition-colors inline-flex items-center gap-1 tracking-wide"
-                  >
-                    {link.label}
-                    <svg
-                      className="w-3 h-3"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
+                  <div className="inline-flex items-center">
+                    <Link
+                      href={link.href}
+                      className="pl-4 py-4 text-sm font-medium text-gray-700 hover:text-forest-dark transition-colors inline-flex items-center tracking-wide"
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M19 9l-7 7-7-7"
-                      />
-                    </svg>
-                  </Link>
+                      {link.label}
+                    </Link>
+                    <button
+                      type="button"
+                      aria-expanded={servicesOpen}
+                      aria-label="Show services menu"
+                      onClick={() => setServicesOpen(!servicesOpen)}
+                      className="pr-4 pl-1 py-4 text-gray-700 hover:text-forest-dark transition-colors"
+                    >
+                      <svg
+                        className={`w-3 h-3 transition-transform ${
+                          servicesOpen ? "rotate-180" : ""
+                        }`}
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
+                    </button>
+                  </div>
                   {servicesOpen && (
                     <div className="absolute top-full left-0 bg-white rounded-md shadow-lg py-2 min-w-[220px] border border-gray-100 z-50">
                       {link.children.map((child) => (
@@ -83,6 +105,7 @@ export default function Header() {
                           key={child.href}
                           href={child.href}
                           className="block px-4 py-2 text-sm text-gray-700 hover:bg-forest-lightest hover:text-forest-dark transition-colors"
+                          onClick={() => setServicesOpen(false)}
                         >
                           {child.label}
                         </Link>
@@ -101,6 +124,24 @@ export default function Header() {
                 </li>
               )
             )}
+            <li className="ml-2">
+              <Link
+                href="/contact/#appointment"
+                className="inline-block bg-forest text-white px-4 py-2 rounded text-sm font-semibold hover:bg-forest-dark transition-colors tracking-wide"
+              >
+                REQUEST APPOINTMENT
+              </Link>
+            </li>
+            <li>
+              <a
+                href={COVETRUS_URL}
+                target="_blank"
+                rel="noopener"
+                className="px-4 py-4 text-sm font-medium text-gray-700 hover:text-forest-dark transition-colors inline-block tracking-wide"
+              >
+                ONLINE PHARMACY
+              </a>
+            </li>
           </ul>
         </div>
       </nav>
@@ -127,10 +168,17 @@ export default function Header() {
             </svg>
             (503) 291-1757
           </PhoneLink>
+          <Link
+            href="/contact/#appointment"
+            className="inline-flex items-center bg-forest-dark text-white px-3 py-2 rounded text-sm font-semibold hover:bg-forest transition-colors"
+          >
+            Appointment
+          </Link>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             className="p-2 text-gray-600"
             aria-label="Toggle menu"
+            aria-expanded={mobileOpen}
           >
             <svg
               className="w-6 h-6"
@@ -187,6 +235,15 @@ export default function Header() {
                 )}
               </div>
             ))}
+            <a
+              href={COVETRUS_URL}
+              target="_blank"
+              rel="noopener"
+              className="block px-3 py-2 text-sm font-medium text-gray-700 hover:text-forest-dark tracking-wide"
+              onClick={() => setMobileOpen(false)}
+            >
+              ONLINE PHARMACY
+            </a>
           </div>
         </div>
       )}

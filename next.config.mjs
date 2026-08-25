@@ -24,8 +24,25 @@ const nextConfig = {
         destination: "/blog/",
         permanent: true,
       },
-      // Specific legacy blog post slugs — must precede the catch-all below.
-      // Wix slugs guessed from preserved titles in PROJECT_INSTRUCTIONS.md.
+      // Wix RSS feed — still returns 200 on the old site, so it may be linked.
+      {
+        source: "/blog-feed.xml",
+        destination: "/blog/",
+        permanent: true,
+      },
+      // Empty placeholder page that Wix published into its sitemap.
+      {
+        source: "/blank",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/blank/",
+        destination: "/",
+        permanent: true,
+      },
+      // Specific legacy blog post slugs — must precede the catch-alls below.
+      // Slugs taken verbatim from the live Wix blog-posts-sitemap.xml.
       {
         source: "/blog-1/april-pet-first-aid-awareness-month",
         destination: "/blog/pet-first-aid-essentials/",
@@ -34,6 +51,19 @@ const nextConfig = {
       {
         source: "/post/april-pet-first-aid-awareness-month",
         destination: "/blog/pet-first-aid-essentials/",
+        permanent: true,
+      },
+      // The real Wix slug contains a literal ellipsis. Both spellings are
+      // mapped: the true one, and the guess that was here previously in case
+      // anything already links to it.
+      {
+        source: "/post/spring-has-sprung...-and-so-have-some-parasites-and-pests",
+        destination: "/blog/spring-parasites-portland/",
+        permanent: true,
+      },
+      {
+        source: "/blog-1/spring-has-sprung...-and-so-have-some-parasites-and-pests",
+        destination: "/blog/spring-parasites-portland/",
         permanent: true,
       },
       {
@@ -46,7 +76,13 @@ const nextConfig = {
         destination: "/blog/spring-parasites-portland/",
         permanent: true,
       },
-      // COVID action plan is retired — falls through to /blog/ via catch-all.
+      // Catch-alls last. The retired COVID action plan lands here, as does any
+      // Wix post slug not explicitly mapped above.
+      {
+        source: "/post/:slug*",
+        destination: "/blog/",
+        permanent: true,
+      },
       {
         source: "/blog-1/:slug*",
         destination: "/blog/",

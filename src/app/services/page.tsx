@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     description:
       "Comprehensive veterinary services for dogs and cats in NW Portland — wellness, dentistry, surgery, diagnostics, nutrition, and pharmacy.",
     url: "/services/",
+    images: ["/opengraph-image"],
   },
 };
 

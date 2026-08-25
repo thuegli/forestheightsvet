@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     description:
       "Professional pet dental care in NW Portland. Dental cleanings, digital X-rays, extractions, and oral surgery for dogs and cats.",
     url: "/dentistry/",
+    images: ["/opengraph-image"],
   },
 };
 

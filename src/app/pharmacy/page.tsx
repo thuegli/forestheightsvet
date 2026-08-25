@@ -4,6 +4,7 @@ import Link from "next/link";
 import PhoneLink from "@/components/PhoneLink";
 import FAQSection from "@/components/FAQSection";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import { COVETRUS_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "In-House Pharmacy",
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
     description:
       "Convenient on-site veterinary pharmacy in NW Portland. Prescription medications, flea and tick prevention, and supplements.",
     url: "/pharmacy/",
+    images: ["/opengraph-image"],
   },
 };
 
@@ -76,6 +78,32 @@ export default function PharmacyPage() {
           <h1 className="font-heading text-4xl md:text-5xl font-bold">
             In-House Pharmacy
           </h1>
+        </div>
+      </section>
+
+      {/* Online Pharmacy CTA */}
+      <section className="py-10 bg-forest-lightest border-y border-forest-light">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="font-heading text-2xl md:text-3xl font-bold text-forest-darkest mb-3">
+            Refill Online, Delivered to Your Door
+          </h2>
+          <p className="text-gray-700 mb-6 max-w-2xl mx-auto">
+            Our online pharmacy carries the same prescription medications,
+            preventatives, and prescription diets we stock in the clinic, with
+            home delivery and autoship. Prescriptions are approved by your
+            Forest Heights veterinarian.
+          </p>
+          <a
+            href={COVETRUS_URL}
+            target="_blank"
+            rel="noopener"
+            className="inline-block bg-forest text-white font-semibold px-8 py-3 rounded hover:bg-forest-dark transition-colors"
+          >
+            Visit Our Online Pharmacy
+          </a>
+          <p className="text-xs text-gray-500 mt-4">
+            Opens our Covetrus storefront in a new tab.
+          </p>
         </div>
       </section>
 

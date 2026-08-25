@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     description:
       "State-of-the-art veterinary diagnostics in NW Portland. In-house lab, digital X-ray, and ultrasound for fast, accurate results.",
     url: "/diagnostics/",
+    images: ["/opengraph-image"],
   },
 };
 

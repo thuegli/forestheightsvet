@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     description:
       "Personalized pet nutrition counseling in NW Portland. Diet plans, weight management, and prescription diets for dogs and cats.",
     url: "/nutrition/",
+    images: ["/opengraph-image"],
   },
 };
 
